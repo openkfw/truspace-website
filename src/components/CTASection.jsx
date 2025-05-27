@@ -54,7 +54,7 @@ function CTASection() {
           </a>
           <a
             href="https://truspace.dev/register"
-            className="text-sm/6 font-semibold text-white hover:text-white"
+            className="text-sm/6 font-semibold text-white hover:text-white hover:underline"
           >
             Register<span aria-hidden="true">→</span>
           </a>
