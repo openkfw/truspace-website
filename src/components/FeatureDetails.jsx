@@ -20,7 +20,7 @@ function FeatureDetails() {
         <div className="relative overflow-hidden pt-16">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <img
-              src="/screenshot2.png"
+              src={`${import.meta.env.BASE_URL}screenshot2.png`}
               alt="App screenshot"
               className="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-white/10"
               width="2432"
@@ -174,7 +174,7 @@ function FeatureDetails() {
       <div className="relative overflow-hidden pt-16">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <img
-            src="/network1.png"
+            src={`${import.meta.env.BASE_URL}network1.png`}
             alt="App screenshot"
             className="bg-white rounded-xl"
             width="2432"
