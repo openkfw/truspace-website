@@ -22,9 +22,8 @@ function FeatureDetails() {
             <img
               src={`${import.meta.env.BASE_URL}truspaceschema.png`}
               alt="App screenshot"
-              className="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-white/10"
-              width="2432"
-              height="1442"
+              className="mb-[-1%] rounded-xl  ring-1 ring-white/10"
+              height="1000"
             />
             <div className="relative" aria-hidden="true">
               <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-gray-900 pt-[7%]"></div>
