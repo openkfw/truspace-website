@@ -5,7 +5,7 @@ function FeatureDetails() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl sm:text-center">
             <h2 className="text-base/7 font-semibold text-indigo-400">
-              Everything you need
+              Stop complaining about BigTech - start here
             </h2>
             <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-white sm:text-balance sm:text-5xl">
               Join the movement
@@ -141,7 +141,8 @@ function FeatureDetails() {
               <dd className="inline">
                 Built on a private IPFS network for robust sync and
                 integrity—even during network splits, your collaboration
-                doesn&#39;t break.
+                doesn&#39;t break. With content-based addressing, data is
+                tamper-proof.
               </dd>
             </div>
             <div className="relative pl-9">

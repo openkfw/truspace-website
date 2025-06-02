@@ -6,7 +6,7 @@ function FeatureSection() {
           Simply work together
         </h2>
         <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-balance">
-          Sovereign data and AI
+          Decentralized data storage and local sovereign AI
         </p>
         <p className="mt-6 text-lg/8 text-gray-300">
           All data is stored and processed locally using IPFS - it cannot be

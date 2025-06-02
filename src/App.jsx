@@ -14,7 +14,7 @@ function App() {
           <main>
             <HeaderBar />
             <Hero />
-            <LogoCloud />
+            {/*  <LogoCloud />*/}
             <FeatureSection />
             <FeatureDetails />
             <CTASection />

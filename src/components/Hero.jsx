@@ -57,8 +57,8 @@ function Hero() {
             AI-infused trusted document collaboration
           </h1>
           <p className="mt-8 text-pretty text-lg font-medium text-gray-400 sm:text-xl/8">
-            Share documents with your friends - but keep control over your data
-            and the AI you&#39;re working with.
+            Share documents with whoever you decide and no one else - keep
+            control over your data and the AI you&#39;re working with.
           </p>
         </div>
         <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
