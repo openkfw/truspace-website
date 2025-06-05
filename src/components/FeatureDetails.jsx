@@ -22,7 +22,7 @@ function FeatureDetails() {
             <img
               src={`${import.meta.env.BASE_URL}truspaceschema.png`}
               alt="App screenshot"
-              className="mb-[-1%] rounded-xl  ring-1 ring-white/10"
+              className="mb-[-1%] rounded-xl"
               height="1000"
             />
             <div className="relative" aria-hidden="true">
@@ -172,13 +172,12 @@ function FeatureDetails() {
         </div>
       </div>
       <div className="relative overflow-hidden pt-16">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto items-center max-w-7xl px-6 lg:px-8">
           <img
-            src={`${import.meta.env.BASE_URL}network1.png`}
+            src={`${import.meta.env.BASE_URL}truspace-network-glow.png`}
             alt="App screenshot"
             className="bg-white rounded-xl"
-            width="2432"
-            height="1442"
+            width="1000"
           />
           <div className="relative" aria-hidden="true">
             <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-gray-900 pt-[7%]"></div>
