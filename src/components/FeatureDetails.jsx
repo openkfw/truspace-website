@@ -172,7 +172,7 @@ function FeatureDetails() {
         </div>
       </div>
       <div className="relative overflow-hidden pt-16">
-        <div className="mx-auto items-center max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto flex justify-center items-center max-w-7xl px-6 lg:px-8">
           <img
             src={`${import.meta.env.BASE_URL}truspace-network-glow.png`}
             alt="App screenshot"
