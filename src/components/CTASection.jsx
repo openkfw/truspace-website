@@ -43,7 +43,7 @@ function CTASection() {
           Try it out - if you like it, keep it
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-lg/8 text-gray-300">
-          It&#39;s open source and MIT licensed. Enjoy.
+          It&#39;s open source and GPL licensed. Enjoy.
         </p>
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <a
