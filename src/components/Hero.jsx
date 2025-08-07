@@ -18,7 +18,10 @@ function Hero() {
                 What&#39;s new
               </span>
               <span className="inline-flex items-center space-x-2 text-sm/6 font-medium text-gray-300">
-                <span>Just shipped v1.0</span>
+                <span>
+                  Just shipped{" "}
+                  <a href="https://github.com/openkfw/TruSpace">v0.8</a>
+                </span>
                 <svg
                   className="size-5 text-gray-500"
                   viewBox="0 0 20 20"

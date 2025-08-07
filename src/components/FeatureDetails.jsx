@@ -5,15 +5,15 @@ function FeatureDetails() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl sm:text-center">
             <h2 className="text-base/7 font-semibold text-indigo-400">
-              Stop complaining about BigTech - start here
+              Sovereign - decentralized - secure
             </h2>
             <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-white sm:text-balance sm:text-5xl">
-              Join the movement
+              Trusted Space - using a federated private network
             </p>
             <p className="mt-6 text-lg/8 text-gray-300">
-              We don&#39;t like bigtech dictating the platform that you use.
+              Don't depend on anyone - keep control of your documents and keep
+              them in sync in your network
               <br />
-              TruSpace is open and open for joint development
             </p>
           </div>
         </div>
@@ -173,12 +173,16 @@ function FeatureDetails() {
       </div>
       <div className="relative overflow-hidden pt-16">
         <div className="mx-auto flex justify-center items-center max-w-7xl px-6 lg:px-8">
-          <img
-            src={`${import.meta.env.BASE_URL}truspace-network-glow.png`}
-            alt="App screenshot"
-            className="bg-white rounded-xl"
-            width="1000"
-          />
+          <iframe
+            width="840"
+            height="472"
+            src="https://www.youtube.com/embed/_eN0X1PyXAE?si=L8sRoTAo1X7E-gCC"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
           <div className="relative" aria-hidden="true">
             <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-gray-900 pt-[7%]"></div>
           </div>

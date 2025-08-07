@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import HeaderBar from "./components/HeaderBar";
 import Hero from "./components/Hero";
 import LogoCloud from "./components/LogoCloud";
+import Problem from "./components/Problem";
 
 function App() {
   return (
@@ -14,9 +15,9 @@ function App() {
           <main>
             <HeaderBar />
             <Hero />
-            <LogoCloud />
+            <Problem /> <FeatureDetails />
             <FeatureSection />
-            <FeatureDetails />
+            <LogoCloud />
             <CTASection />
             <Footer />
           </main>
