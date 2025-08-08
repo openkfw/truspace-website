@@ -26,7 +26,7 @@ function Problem() {
               <div className="mb-6 flex size-10 items-center justify-center rounded-lg bg-indigo-500">
                 <FontAwesomeIcon icon={faCloudBolt} />
               </div>
-              We store documents using a service by BigTech
+              Do you store documents using a service by BigTech
             </dt>
             <dd className="mt-1 flex flex-auto flex-col text-base/7 text-gray-300">
               <p className="flex-auto">
@@ -50,7 +50,7 @@ function Problem() {
               <div className="mb-6 flex size-10 items-center justify-center rounded-lg bg-indigo-500">
                 <FontAwesomeIcon icon={faServer} />
               </div>
-              We store docs using a server of one organisation
+              Do you store docs using a server of one organisation
             </dt>
             <dd className="mt-1 flex flex-auto flex-col text-base/7 text-gray-300">
               <p className="flex-auto">
@@ -74,7 +74,7 @@ function Problem() {
               <div className="mb-6 flex size-10 items-center justify-center rounded-lg bg-indigo-500">
                 <FontAwesomeIcon icon={faEnvelopeOpenText} />
               </div>
-              We use eMail
+              Do you share documents using eMail
             </dt>
             <dd className="mt-1 flex flex-auto flex-col text-base/7 text-gray-300">
               <p className="flex-auto">
