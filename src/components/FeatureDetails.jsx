@@ -176,13 +176,14 @@ function FeatureDetails() {
           <iframe
             width="840"
             height="472"
-            src="https://youtu.be/dpo_D3NJpqE"
+            src="https://www.youtube.com/embed/dpo_D3NJpqE?si=CnmQLS9RWeJ9sjJx"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
           ></iframe>
+
           <div className="relative" aria-hidden="true">
             <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-gray-900 pt-[7%]"></div>
           </div>
