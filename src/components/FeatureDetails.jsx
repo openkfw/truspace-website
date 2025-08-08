@@ -176,7 +176,7 @@ function FeatureDetails() {
           <iframe
             width="840"
             height="472"
-            src="https://www.youtube.com/embed/_eN0X1PyXAE?si=L8sRoTAo1X7E-gCC"
+            src="https://youtu.be/dpo_D3NJpqE"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
