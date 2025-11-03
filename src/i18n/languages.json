@@ -1,0 +1,117 @@
+{
+  "ENG": {
+    "name": "English",
+    "strings": {
+      "login": "Login",
+      "register": "Register",
+
+      "whatsnew": "What's new",
+      "shipped": "Just shipped",
+      "main_title": "AI-infused trusted document collaboration",
+      "main_catchphrase": "Share documents with whoever you decide and no one else - keep control over your data and the AI you're working with.",
+
+      "problem_subtitle": "Inspired by the fediverse",
+      "problem_title": "Why another document exchange platform?",
+      "problem_catchphrase": "Who owns your data when collaborating across organisations?",
+      "subproblem1_title": "Do you store documents using a service by BigTech",
+      "subproblem1_explanation": "Are you sure they don't read your data? Or delete it because of an executive order? Or even change it? Will they decide to charge more for their service once you are locked in? Who owns the admin account to the cloud server?",
+      "learn_more": "Learn more",
+      "subproblem2_title": "Do you store docs using a server of one organisation",
+      "subproblem2_explanation": "Ok, you agree that data is stored by one organisation using a sovereign open source server like NextCloud. Do you trust that it will work out forever? That they won't be hacked? That we're all friends forever?",
+      "subproblem3_title": "Do you share documents using eMail",
+      "subproblem3_explanation": "Doesn't sound too bad - everyone is storing their own data, eMail is a nice federated system with less dependencies. If there weren't all the problems with different versions, file limits and overall handling.",
+
+      "feature_subtitle": "Sovereign - decentralized - secure",
+      "feature_title": "Trusted Space - using a federated private network",
+      "feature_catchphrase": "Don't depend on anyone - keep control of your documents and keep them in sync in your network",
+      "feature1_title": "Sovereignty",
+      "feature1_explanation": "Take back control of your data with decentralized, tamper-proof storage—your documents, your rules, no middlemen.",
+      "feature2_title": "Collaboration",
+      "feature2_explanation": "Work smarter with a shared space that unites documents, chat, and versioning—finally, real-time teamwork that doesn't suck.",
+      "feature3_title": "Perspective",
+      "feature3_explanation": "Go beyond chatbots: check AI-generated insights through best-practice prompts that you don't have to enter yourself",
+      "feature4_title": "Choice",
+      "feature4_explanation": "Pick the AI that aligns with your values—whether it's OpenAI, LLAMA, or your own model, you're in charge.",
+      "feature5_title": "Resilience",
+      "feature5_explanation": "Built on a private IPFS network for robust sync and integrity—even during network splits, your collaboration doesn't break. With content-based addressing, data is tamper-proof.",
+      "feature6_title": "Commons",
+      "feature6_explanation": "Open-source and non-commercial by design—TruSpace is a digital public good meant to evolve with the community.",
+
+      "tech_subtitle": "Simply work together",
+      "tech_title": "Decentralized data storage and local sovereign AI",
+      "tech_catchphrase": "All data is stored and processed locally using IPFS - it cannot be manipulated",
+      "tech1_title": "Sovereign",
+      "tech1_explanation": "All the data on your server. With open code. Nothing to hide. Full control of the data - and with content-based addressing no chance for hackers.",
+      "tech2_title": "Decentralized",
+      "tech2_explanation": "You can't agree who should host the data? You don't have to. The IPFS cluster syncs everything across everyone who likes to join the network. And no one else.",
+      "tech3_title": "AI-infused",
+      "tech3_explanation": "Pre-analyse all documents for summaries, inconsistencies and everything you like. Of course with locally hosted AI and the engine that you choose.",
+
+      "tech_logos_title": "Web technologies used in our app",
+
+      "test_title": "Try it out - if you like it, keep it",
+      "test_catchphrase": "It's open source and GPL licensed. Enjoy.",
+
+      "copyright": "2025 TruSpace, ",
+      "impressum": "Impressum here"
+    }
+  },
+
+  "ESP": {
+    "name": "Español",
+    "strings": {
+      "login": "Iniciar sesión",
+      "register": "Registrarse",
+
+      "whatsnew": "What's new",
+      "shipped": "Just shipped",
+      "main_title": "AI-infused trusted document collaboration",
+      "main_catchphrase": "Share documents with whoever you decide and no one else - keep control over your data and the AI you're working with.",
+
+      "problem_subtitle": "Inspired by the fediverse",
+      "problem_title": "Why another document exchange platform?",
+      "problem_catchphrase": "Who owns your data when collaborating across organisations?",
+      "subproblem1_title": "Do you store documents using a service by BigTech",
+      "subproblem1_explanation": "Are you sure they don't read your data? Or delete it because of an executive order? Or even change it? Will they decide to charge more for their service once you are locked in? Who owns the admin account to the cloud server?",
+      "learn_more": "Learn more",
+      "subproblem2_title": "Do you store docs using a server of one organisation",
+      "subproblem2_explanation": "Ok, you agree that data is stored by one organisation using a sovereign open source server like NextCloud. Do you trust that it will work out forever? That they won't be hacked? That we're all friends forever?",
+      "subproblem3_title": "Do you share documents using eMail",
+      "subproblem3_explanation": "Doesn't sound too bad - everyone is storing their own data, eMail is a nice federated system with less dependencies. If there weren't all the problems with different versions, file limits and overall handling.",
+
+      "feature_subtitle": "Sovereign - decentralized - secure",
+      "feature_title": "Trusted Space - using a federated private network",
+      "feature_catchphrase": "Don't depend on anyone - keep control of your documents and keep them in sync in your network",
+      "feature1_title": "Sovereignty",
+      "feature1_explanation": "Take back control of your data with decentralized, tamper-proof storage—your documents, your rules, no middlemen.",
+      "feature2_title": "Collaboration",
+      "feature2_explanation": "Work smarter with a shared space that unites documents, chat, and versioning—finally, real-time teamwork that doesn't suck.",
+      "feature3_title": "Perspective",
+      "feature3_explanation": "Go beyond chatbots: check AI-generated insights through best-practice prompts that you don't have to enter yourself",
+      "feature4_title": "Choice",
+      "feature4_explanation": "Pick the AI that aligns with your values—whether it's OpenAI, LLAMA, or your own model, you're in charge.",
+      "feature5_title": "Resilience",
+      "feature5_explanation": "Built on a private IPFS network for robust sync and integrity—even during network splits, your collaboration doesn't break. With content-based addressing, data is tamper-proof.",
+      "feature6_title": "Commons",
+      "feature6_explanation": "Open-source and non-commercial by design—TruSpace is a digital public good meant to evolve with the community.",
+
+      "tech_subtitle": "Simply work together",
+      "tech_title": "Decentralized data storage and local sovereign AI",
+      "tech_catchphrase": "All data is stored and processed locally using IPFS - it cannot be manipulated",
+      "tech1_title": "Sovereign",
+      "tech1_explanation": "All the data on your server. With open code. Nothing to hide. Full control of the data - and with content-based addressing no chance for hackers.",
+      "tech2_title": "Decentralized",
+      "tech2_explanation": "You can't agree who should host the data? You don't have to. The IPFS cluster syncs everything across everyone who likes to join the network. And no one else.",
+      "tech3_title": "AI-infused",
+      "tech3_explanation": "Pre-analyse all documents for summaries, inconsistencies and everything you like. Of course with locally hosted AI and the engine that you choose.",
+
+      "tech_logos_title": "Web technologies used in our app",
+
+      "test_title": "Try it out - if you like it, keep it",
+      "test_catchphrase": "It's open source and GPL licensed. Enjoy.",
+
+      "copyright": "2025 TruSpace, ",
+      "impressum": "Impressum here"
+    }
+  }
+}

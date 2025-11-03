@@ -1,6 +1,18 @@
 import "../index.css";
+import { useLanguage } from '../i18n/LanguageProvider';
+import { useEffect, useState } from "react";
 
 function Hero() {
+  const { strings } = useLanguage();
+  const [latestVersion, setLatestVersion] = useState(null);
+
+  useEffect(() => {
+    fetch("https://api.github.com/repos/openkfw/TruSpace/releases/latest")
+      .then((res) => res.json())
+      .then((data) => setLatestVersion(data.tag_name))
+      .catch(() => setLatestVersion(null));
+  }, []);
+
   return (
     <div className="relative isolate overflow-hidden">
       <div
@@ -15,12 +27,14 @@ function Hero() {
           <div className="mt-24 sm:mt-32 lg:mt-16">
             <div className="inline-flex space-x-6 items-center">
               <span className="rounded-full bg-indigo-500/10 px-3 py-1 text-sm/6 font-semibold text-indigo-400 ring-1 ring-inset ring-indigo-500/20">
-                What&#39;s new
+                {strings.whatsnew}
               </span>
               <span className="inline-flex items-center space-x-2 text-sm/6 font-medium text-gray-300">
                 <span>
-                  Just shipped{" "}
-                  <a href="https://github.com/openkfw/TruSpace">v0.8</a>
+                  {strings.shipped}{" "}
+                  <a href="https://github.com/openkfw/TruSpace">
+                    {latestVersion ? latestVersion : "…"}
+                  </a>
                 </span>
                 <svg
                   className="size-5 text-gray-500"
@@ -57,11 +71,10 @@ function Hero() {
             </div>
           </div>
           <h1 className="mt-10 text-pretty text-5xl font-semibold tracking-tight text-white sm:text-7xl">
-            AI-infused trusted document collaboration
+            {strings.main_title}
           </h1>
           <p className="mt-8 text-pretty text-lg font-medium text-gray-400 sm:text-xl/8">
-            Share documents with whoever you decide and no one else - keep
-            control over your data and the AI you&#39;re working with.
+            {strings.main_catchphrase}
           </p>
         </div>
         <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">

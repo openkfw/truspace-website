@@ -1,8 +1,12 @@
+import { useLanguage } from '../i18n/LanguageProvider';
+
 function LogoCloud() {
+  const { strings } = useLanguage();
+
   return (
     <div className="mx-auto mt-8 max-w-7xl px-6 sm:mt-16 lg:px-8">
       <h2 className="text-center text-lg/8 font-semibold text-white">
-        Web technologies used in our app
+        {strings.tech_logos_title}
       </h2>
       <div className="mx-auto mt-10 grid grid-cols-4 items-center gap-x-8 gap-y-10">
         <img

@@ -1,18 +1,81 @@
+import React, { useState, useRef, useEffect } from 'react';
+import { useLanguage } from '../i18n/LanguageProvider';
+
 function HeaderBar() {
+  const { lang, setLang, strings, allLanguages } = useLanguage();
+  const [open, setOpen] = useState(false);
+  const containerRef = useRef(null);
+
+  // Close on outside click
+  useEffect(() => {
+    function onDoc(e) {
+      if (!containerRef.current) return;
+      if (!containerRef.current.contains(e.target)) setOpen(false);
+    }
+    document.addEventListener('mousedown', onDoc);
+    return () => document.removeEventListener('mousedown', onDoc);
+  }, []);
+
+  const switchLabel = lang; // ENG or ESP
+
   return (
     <div className="sticky top-0 z-50 w-full bg-gray-900 px-4 py-2 shadow-lg">
       <div className="flex justify-end items-center gap-4">
+        {/* Language switcher */}
+        <div className="relative" ref={containerRef}>
+          <button
+            onClick={() => setOpen((s) => !s)}
+            aria-haspopup="menu"
+            aria-expanded={open}
+            className="inline-flex items-center gap-1 px-2 py-1 text-sm text-white hover:text-white focus:outline-none"
+            title="Select language"
+            type="button"
+          >
+            <span className="font-semibold">{switchLabel}</span>
+            <span className="transform rotate-90 text-xs leading-none">›</span>
+          </button>
+
+          {open && (
+            <div
+              role="menu"
+              className="absolute right-0 mt-2 min-w-[120px] rounded bg-gray-800 shadow-md ring-1 ring-black ring-opacity-5 z-50"
+              style={{zIndex: 9999}}
+            >
+              <ul className="py-1">
+                {Object.keys(allLanguages).map((key) => (
+                  <li key={key}>
+                    <button
+                      role="menuitem"
+                      onClick={() => {
+                        setLang(key);
+                        setOpen(false);
+                      }}
+                      className={`w-full text-left px-3 py-2 text-sm ${
+                        key === lang ? 'bg-gray-700 font-semibold' : 'hover:bg-gray-700'
+                      }`}
+                      type="button"
+                    >
+                      <span className="mr-2 text-xs">{key}</span>
+                      <span className="text-gray-200 text-sm">{allLanguages[key].name}</span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+
         <a
           href="https://truspace.dev/login"
           className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white hover:text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
         >
-          Login
+          {strings.login}
         </a>
         <a
           href="https://truspace.dev/register"
           className="text-sm/6 font-semibold text-white hover:text-white hover:underline"
         >
-          Register
+          {strings.register}
         </a>
         <a
           href="https://github.com/openkfw/TruSpace"
