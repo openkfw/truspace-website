@@ -27,7 +27,7 @@ function HeaderBar() {
             onClick={() => setOpen((s) => !s)}
             aria-haspopup="menu"
             aria-expanded={open}
-            className="inline-flex items-center gap-1 px-2 py-1 text-sm text-white hover:text-white focus:outline-none"
+            className="inline-flex items-center gap-1 px-2 py-1 text-sm text-white hover:text-white hover:bg-gray-600 cursor-pointer"
             title="Select language"
             type="button"
           >
@@ -50,7 +50,7 @@ function HeaderBar() {
                         setLang(key);
                         setOpen(false);
                       }}
-                      className={`w-full text-left px-3 py-2 text-sm ${
+                      className={`cursor-pointer w-full text-left px-3 py-2 text-sm ${
                         key === lang ? 'bg-gray-700 font-semibold' : 'hover:bg-gray-700'
                       }`}
                       type="button"
