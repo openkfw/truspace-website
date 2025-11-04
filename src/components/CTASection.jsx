@@ -1,6 +1,9 @@
 import "../index.css";
+import { useLanguage } from '../i18n/LanguageProvider';
 
 function CTASection() {
+  const { strings } = useLanguage();
+
   return (
     <div className="relative isolate mt-32 px-6 py-32 sm:mt-56 sm:py-40 lg:px-8">
       <svg
@@ -40,23 +43,23 @@ function CTASection() {
       </div>
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-          Try it out - if you like it, keep it
+          {strings.test_title}
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-lg/8 text-gray-300">
-          It&#39;s open source and GPL licensed. Enjoy.
+          {strings.test_catchphrase}
         </p>
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <a
             href="https://truspace.dev/login"
             className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white hover:text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
           >
-            Login
+            {strings.login}
           </a>
           <a
             href="https://truspace.dev/register"
             className="text-sm/6 font-semibold text-white hover:text-white hover:underline"
           >
-            Register<span aria-hidden="true">→</span>
+            {strings.register}<span aria-hidden="true">→</span>
           </a>
         </div>
       </div>

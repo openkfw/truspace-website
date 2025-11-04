@@ -1,16 +1,19 @@
+import { useLanguage } from '../i18n/LanguageProvider';
+
 function FeatureSection() {
+  const { strings } = useLanguage();
+
   return (
     <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8">
       <div className="mx-auto max-w-2xl lg:text-center">
         <h2 className="text-base/7 font-semibold text-indigo-400">
-          Simply work together
+          {strings.tech_subtitle}
         </h2>
         <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-balance">
-          Decentralized data storage and local sovereign AI
+          {strings.tech_title}
         </p>
         <p className="mt-6 text-lg/8 text-gray-300">
-          All data is stored and processed locally using IPFS - it cannot be
-          manipulated
+          {strings.tech_catchphrase}
         </p>
       </div>
       <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
@@ -34,20 +37,18 @@ function FeatureSection() {
                   />
                 </svg>
               </div>
-              Sovereign
+              {strings.tech1_title}
             </dt>
             <dd className="mt-1 flex flex-auto flex-col text-base/7 text-gray-300">
               <p className="flex-auto">
-                All the data on your server. With open code. Nothing to hide.
-                Full control of the data - and with content-based addressing no
-                chance for hackers.
+                {strings.tech1_explanation}
               </p>
               <p className="mt-6">
                 <a
                   href="https://github.com/openkfw/TruSpace"
                   className="text-sm/6 font-semibold text-indigo-400"
                 >
-                  Learn more <span aria-hidden="true">→</span>
+                  {strings.learn_more} <span aria-hidden="true">→</span>
                 </a>
               </p>
             </dd>
@@ -71,20 +72,18 @@ function FeatureSection() {
                   />
                 </svg>
               </div>
-              Decentralized
+              {strings.tech2_title}
             </dt>
             <dd className="mt-1 flex flex-auto flex-col text-base/7 text-gray-300">
               <p className="flex-auto">
-                You can't agree who should host the data? You don't have to. The
-                IPFS cluster syncs everything across everyone who likes to join
-                the network. And no one else.
+                {strings.tech2_explanation}
               </p>
               <p className="mt-6">
                 <a
                   href="https://github.com/openkfw/TruSpace"
                   className="text-sm/6 font-semibold text-indigo-400"
                 >
-                  Learn more <span aria-hidden="true">→</span>
+                  {strings.learn_more} <span aria-hidden="true">→</span>
                 </a>
               </p>
             </dd>
@@ -108,20 +107,18 @@ function FeatureSection() {
                   />
                 </svg>
               </div>
-              AI-infused
+              {strings.tech3_title}
             </dt>
             <dd className="mt-1 flex flex-auto flex-col text-base/7 text-gray-300">
               <p className="flex-auto">
-                Pre-analyse all documents for summaries, inconsistencies and
-                everything you like. Of course with locally hosted AI and the
-                engine that you choose.
+                {strings.tech3_explanation}
               </p>
               <p className="mt-6">
                 <a
                   href="https://github.com/openkfw/TruSpace"
                   className="text-sm/6 font-semibold text-indigo-400"
                 >
-                  Learn more <span aria-hidden="true">→</span>
+                  {strings.learn_more} <span aria-hidden="true">→</span>
                 </a>
               </p>
             </dd>

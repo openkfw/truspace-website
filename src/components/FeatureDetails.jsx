@@ -1,18 +1,21 @@
+import { useLanguage } from '../i18n/LanguageProvider';
+
 function FeatureDetails() {
+  const { strings } = useLanguage();
+
   return (
     <>
       <div className="mt-32 sm:mt-56">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl sm:text-center">
             <h2 className="text-base/7 font-semibold text-indigo-400">
-              Sovereign - decentralized - secure
+              {strings.feature_subtitle}
             </h2>
             <p className="mt-2 text-pretty text-4xl font-semibold tracking-tight text-white sm:text-balance sm:text-5xl">
-              Trusted Space - using a federated private network
+              {strings.feature_title}
             </p>
             <p className="mt-6 text-lg/8 text-gray-300">
-              Don't depend on anyone - keep control of your documents and keep
-              them in sync in your network
+              {strings.feature_catchphrase}
               <br />
             </p>
           </div>
@@ -47,11 +50,10 @@ function FeatureDetails() {
                     clipRule="evenodd"
                   />
                 </svg>
-                Sovereignty{" "}
+                {strings.feature1_title}{" "}
               </dt>
               <dd className="inline">
-                Take back control of your data with decentralized, tamper-proof
-                storage—your documents, your rules, no middlemen.
+                {strings.feature1_explanation}
               </dd>
             </div>
             <div className="relative pl-9">
@@ -69,12 +71,10 @@ function FeatureDetails() {
                     clipRule="evenodd"
                   />
                 </svg>
-                Collaboration{" "}
+                {strings.feature2_title}{" "}
               </dt>
               <dd className="inline">
-                Work smarter with a shared space that unites documents, chat,
-                and versioning—finally, real-time teamwork that doesn&#39;t
-                suck.
+                {strings.feature2_explanation}
               </dd>
             </div>
             <div className="relative pl-9">
@@ -92,11 +92,10 @@ function FeatureDetails() {
                     clipRule="evenodd"
                   />
                 </svg>
-                Perspective{" "}
+                {strings.feature3_title}{" "}
               </dt>
               <dd className="inline">
-                Go beyond chatbots: check AI-generated insights through
-                best-practice prompts that you don't have to enter yourself
+                {strings.feature3_explanation}
               </dd>
             </div>
             <div className="relative pl-9">
@@ -114,11 +113,10 @@ function FeatureDetails() {
                     clipRule="evenodd"
                   />
                 </svg>
-                Choice{" "}
+                {strings.feature4_title}{" "}
               </dt>
               <dd className="inline">
-                Pick the AI that aligns with your values—whether it&#39;s
-                OpenAI, LLAMA, or your own model, you&#39;re in charge.
+                {strings.feature4_explanation}
               </dd>
             </div>
             <div className="relative pl-9">
@@ -136,13 +134,10 @@ function FeatureDetails() {
                     clipRule="evenodd"
                   />
                 </svg>
-                Resilience{" "}
+                {strings.feature5_title}{" "}
               </dt>
               <dd className="inline">
-                Built on a private IPFS network for robust sync and
-                integrity—even during network splits, your collaboration
-                doesn&#39;t break. With content-based addressing, data is
-                tamper-proof.
+                {strings.feature5_explanation}
               </dd>
             </div>
             <div className="relative pl-9">
@@ -161,11 +156,10 @@ function FeatureDetails() {
                     clipRule="evenodd"
                   />
                 </svg>
-                Commons{" "}
+                {strings.feature6_title}{" "}
               </dt>
               <dd className="inline">
-                Open-source and non-commercial by design—TruSpace is a digital
-                public good meant to evolve with the community.
+                {strings.feature6_explanation}
               </dd>
             </div>
           </dl>

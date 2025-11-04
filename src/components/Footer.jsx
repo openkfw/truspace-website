@@ -1,10 +1,14 @@
+import { useLanguage } from '../i18n/LanguageProvider';
+
 function Footer() {
+  const { strings } = useLanguage();
+
   return (
     <footer className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
       <div className="border-t border-white/10 py-12 md:flex md:items-center md:justify-between">
         <p className="text-center text-sm/6 text-gray-400 md:mt-0">
-          &copy; 2025 TruSpace,
-          <a href="https://github.com/openkfw/TruSpace"> Impressum here</a>
+          &copy; {strings.copyright}
+          <a href="https://github.com/openkfw/TruSpace">{strings.impressum}</a>
         </p>
         <div className="mt-8 md:mt-0 flex justify-center">
           <a
