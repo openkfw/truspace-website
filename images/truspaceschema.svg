@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" fill="none">
+  <rect width="1200" height="600" fill="#111827"/>
+  
+  <!-- Organization nodes -->
+  <g transform="translate(100, 150)">
+    <rect width="200" height="120" rx="12" fill="#1f2937" stroke="#6366f1" stroke-width="2"/>
+    <text x="100" y="50" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="white" font-weight="600">Organization A</text>
+    <text x="100" y="80" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#9ca3af">IPFS Node</text>
+    <circle cx="100" cy="100" r="8" fill="#6366f1"/>
+  </g>
+  
+  <g transform="translate(500, 50)">
+    <rect width="200" height="120" rx="12" fill="#1f2937" stroke="#6366f1" stroke-width="2"/>
+    <text x="100" y="50" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="white" font-weight="600">Organization B</text>
+    <text x="100" y="80" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#9ca3af">IPFS Node</text>
+    <circle cx="100" cy="100" r="8" fill="#6366f1"/>
+  </g>
+  
+  <g transform="translate(900, 150)">
+    <rect width="200" height="120" rx="12" fill="#1f2937" stroke="#6366f1" stroke-width="2"/>
+    <text x="100" y="50" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="white" font-weight="600">Organization C</text>
+    <text x="100" y="80" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#9ca3af">IPFS Node</text>
+    <circle cx="100" cy="100" r="8" fill="#6366f1"/>
+  </g>
+  
+  <g transform="translate(300, 350)">
+    <rect width="200" height="120" rx="12" fill="#1f2937" stroke="#6366f1" stroke-width="2"/>
+    <text x="100" y="50" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="white" font-weight="600">Organization D</text>
+    <text x="100" y="80" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#9ca3af">IPFS Node</text>
+    <circle cx="100" cy="100" r="8" fill="#6366f1"/>
+  </g>
+  
+  <g transform="translate(700, 350)">
+    <rect width="200" height="120" rx="12" fill="#1f2937" stroke="#6366f1" stroke-width="2"/>
+    <text x="100" y="50" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="white" font-weight="600">Organization E</text>
+    <text x="100" y="80" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#9ca3af">IPFS Node</text>
+    <circle cx="100" cy="100" r="8" fill="#6366f1"/>
+  </g>
+  
+  <!-- Connection lines -->
+  <line x1="300" y1="250" x2="500" y2="170" stroke="#6366f1" stroke-width="2" stroke-dasharray="5,5" opacity="0.5"/>
+  <line x1="700" y1="170" x2="900" y2="250" stroke="#6366f1" stroke-width="2" stroke-dasharray="5,5" opacity="0.5"/>
+  <line x1="200" y1="270" x2="400" y2="350" stroke="#6366f1" stroke-width="2" stroke-dasharray="5,5" opacity="0.5"/>
+  <line x1="1000" y1="270" x2="800" y2="350" stroke="#6366f1" stroke-width="2" stroke-dasharray="5,5" opacity="0.5"/>
+  <line x1="500" y1="450" x2="700" y2="450" stroke="#6366f1" stroke-width="2" stroke-dasharray="5,5" opacity="0.5"/>
+  <line x1="600" y1="170" x2="600" y2="350" stroke="#6366f1" stroke-width="2" stroke-dasharray="5,5" opacity="0.5"/>
+  
+  <!-- Central cloud -->
+  <ellipse cx="600" cy="260" rx="80" ry="40" fill="none" stroke="#80caff" stroke-width="2" opacity="0.3"/>
+  <text x="600" y="265" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#80caff">Private IPFS</text>
+  
+  <!-- Placeholder text -->
+  <text x="600" y="550" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#6b7280">
+    Replace with truspaceschema.png from your React build
+  </text>
+</svg>
