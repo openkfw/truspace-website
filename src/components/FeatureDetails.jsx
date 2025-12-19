@@ -1,7 +1,7 @@
 function FeatureDetails() {
   return (
     <>
-      <div className="mt-32 sm:mt-56">
+      <section aria-labelledby="features-heading" className="mt-32 sm:mt-56">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl sm:text-center">
             <h2 className="text-base/7 font-semibold text-indigo-400">
@@ -21,9 +21,10 @@ function FeatureDetails() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <img
               src={`${import.meta.env.BASE_URL}truspaceschema.png`}
-              alt="App screenshot"
+              alt="TruSpace architecture diagram showing federated private network with IPFS nodes connecting multiple organizations"
               className="mb-[-1%] rounded-xl"
               height="1000"
+              loading="lazy"
             />
             <div className="relative" aria-hidden="true">
               <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-gray-900 pt-[7%]"></div>
@@ -170,18 +171,19 @@ function FeatureDetails() {
             </div>
           </dl>
         </div>
-      </div>
+      </section>
       <div className="relative overflow-hidden pt-16">
         <div className="mx-auto flex justify-center items-center max-w-7xl px-6 lg:px-8">
           <iframe
             width="840"
             height="472"
             src="https://www.youtube.com/embed/dpo_D3NJpqE?si=CnmQLS9RWeJ9sjJx"
-            title="YouTube video player"
-            frameborder="0"
+            title="TruSpace Demo - Decentralized Document Collaboration Platform"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            loading="lazy"
           ></iframe>
 
           <div className="relative" aria-hidden="true">

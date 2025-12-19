@@ -68,9 +68,10 @@ function Hero() {
           <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
             <img
               src={`${import.meta.env.BASE_URL}screenshot1.png`}
-              alt="App screenshot"
+              alt="TruSpace application interface showing decentralized document collaboration with AI features"
               width="2432"
               height="1442"
+              loading="eager"
               className="w-[76rem] rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10"
             />
           </div>

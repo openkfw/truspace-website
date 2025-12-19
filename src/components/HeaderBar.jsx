@@ -1,7 +1,10 @@
 function HeaderBar() {
   return (
-    <div className="sticky top-0 z-50 w-full bg-gray-900 px-4 py-2 shadow-lg">
-      <div className="flex justify-end items-center gap-4">
+    <header className="sticky top-0 z-50 w-full bg-gray-900 px-4 py-2 shadow-lg">
+      <nav
+        aria-label="Main navigation"
+        className="flex justify-end items-center gap-4"
+      >
         <a
           href="https://truspace.dev/login"
           className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white hover:text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
@@ -32,8 +35,8 @@ function HeaderBar() {
             />
           </svg>
         </a>
-      </div>
-    </div>
+      </nav>
+    </header>
   );
 }
 
