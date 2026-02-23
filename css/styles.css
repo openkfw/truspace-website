@@ -86,6 +86,7 @@ header {
   font-size: 1.2rem;
   font-weight: 800;
   color: var(--text);
+  flex-shrink: 0;
 }
 .nav-logo img {
   height: 28px;
@@ -95,6 +96,7 @@ header {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-wrap: nowrap;
 }
 .nav-link {
   padding: 6px 14px;
@@ -105,6 +107,7 @@ header {
   transition:
     color 0.2s,
     background 0.2s;
+  white-space: nowrap;
 }
 .nav-link:hover {
   color: var(--text);
@@ -127,6 +130,7 @@ header {
   font-weight: 600;
   transition: all 0.2s;
   cursor: pointer;
+  white-space: nowrap;
 }
 .btn-primary {
   background: var(--accent);
@@ -766,10 +770,39 @@ footer p {
 }
 
 /* ── Responsive nav ───────────────────────────────────────── */
-@media (max-width: 600px) {
-  .nav-links .nav-link:not(.docs) {
+
+/* Tablet: hide the "Quick Start" text link, keep everything else */
+@media (max-width: 780px) {
+  .nav-link:not(.docs):not([href*="github"]) {
     display: none;
   }
+}
+
+/* Mobile: hide the logo too, trim button padding */
+@media (max-width: 480px) {
+  .nav-logo {
+    display: none;
+  }
+
+  /* Only show: 📖 Docs · GitHub icon · Login */
+  .btn-ghost {
+    display: none;
+  }
+
+  .nav-links {
+    gap: 6px;
+  }
+
+  .nav-link.docs {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  .btn-primary {
+    padding: 6px 14px;
+    font-size: 0.82rem;
+  }
+
   .hero-cta {
     flex-direction: column;
   }
