@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TruSpace Animation Preview</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #111827;
+            color: #e5e7eb;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 1.5rem;
+        }
+        h1 { font-size: 1.3rem; margin-bottom: 1.2rem; font-weight: 600; color: #f9fafb; }
+        .demo-wrapper { width: 100%; max-width: 860px; }
+        p.hint { margin-top: 1rem; font-size: 0.8rem; color: #6b7280; text-align: center; }
+
+        /* === screenshot-animation.css inlined for preview === */
+        .screenshot-animation-container {
+            position: relative; width: 100%; overflow: hidden;
+            border-radius: 12px; background: #0d1117; aspect-ratio: 16 / 9;
+        }
+        .screenshot-animation-canvas {
+            position: absolute; inset: 0;
+            transition: transform 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: center center; will-change: transform;
+        }
+        .screenshot-animation-canvas svg.connector-lines {
+            position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none;
+        }
+        .connector-lines line {
+            stroke: #3abab4; stroke-width: 2.5; stroke-dasharray: 8 4;
+            opacity: 0; transition: opacity 0.8s ease;
+        }
+        .connector-lines line.visible { opacity: 1; }
+        .connector-lines circle.node-dot {
+            fill: #3abab4; opacity: 0; transition: opacity 0.8s ease;
+        }
+        .connector-lines circle.node-dot.visible { opacity: 1; }
+        .screenshot-card {
+            position: absolute; border-radius: 8px; overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.08);
+            opacity: 0; transform: scale(0.8);
+            transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.4,0,0.2,1),
+                        left 1.2s cubic-bezier(0.4,0,0.2,1), top 1.2s cubic-bezier(0.4,0,0.2,1),
+                        width 1.2s cubic-bezier(0.4,0,0.2,1), height 1.2s cubic-bezier(0.4,0,0.2,1);
+            z-index: 2;
+        }
+        .screenshot-card.visible { opacity: 1; transform: scale(1); }
+        .screenshot-card img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+        .screenshot-card::after {
+            content: ''; position: absolute; inset: 0; border-radius: 8px;
+            box-shadow: inset 0 0 0 1px rgba(58,186,180,0.15);
+            pointer-events: none; opacity: 0; transition: opacity 0.8s ease;
+        }
+        .screenshot-card.connected::after { opacity: 1; }
+        .screenshot-card .card-label {
+            position: absolute; bottom: 8px; left: 8px;
+            background: rgba(58,186,180,0.9); color: #fff;
+            font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 20px;
+            opacity: 0; transform: translateY(6px);
+            transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .screenshot-card.connected .card-label { opacity: 1; transform: translateY(0); }
+        @keyframes pulse-dot { 0%,100%{r:5;opacity:1} 50%{r:8;opacity:0.6} }
+        .connector-lines circle.node-dot.visible { animation: pulse-dot 2s ease-in-out infinite; }
+        @keyframes dash-flow { to { stroke-dashoffset: -24; } }
+        .connector-lines line.visible { animation: dash-flow 1.5s linear infinite; }
+
+        /* Placeholder screenshot styling */
+        .placeholder-screen {
+            width: 100%; height: 100%; background: #1a1f2e;
+            display: flex; flex-direction: column; overflow: hidden;
+        }
+        .placeholder-screen .topbar {
+            height: 28px; background: #12151f; display: flex; align-items: center;
+            padding: 0 10px; gap: 6px; flex-shrink: 0;
+        }
+        .placeholder-screen .topbar .dot { width: 8px; height: 8px; border-radius: 50%; }
+        .placeholder-screen .topbar .dot.r { background: #f87171; }
+        .placeholder-screen .topbar .dot.y { background: #fbbf24; }
+        .placeholder-screen .topbar .dot.g { background: #34d399; }
+        .placeholder-screen .body { flex: 1; display: flex; }
+        .placeholder-screen .sidebar {
+            width: 25%; background: #151926; padding: 12px 8px;
+            display: flex; flex-direction: column; gap: 8px;
+        }
+        .placeholder-screen .sidebar .item {
+            height: 10px; border-radius: 4px; background: #252a3a;
+        }
+        .placeholder-screen .sidebar .item.active { background: #3abab4; opacity: 0.7; }
+        .placeholder-screen .main { flex: 1; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+        .placeholder-screen .main .block {
+            border-radius: 6px; background: #1e2235;
+        }
+        .placeholder-screen .main .block.header { height: 18px; width: 60%; background: #f0f0f0; opacity: 0.08; }
+        .placeholder-screen .main .block.content { flex: 1; }
+        .placeholder-screen .main .block.tags {
+            height: 24px; display: flex; gap: 6px; background: none;
+        }
+        .placeholder-screen .main .block.tags span {
+            display: inline-block; height: 18px; border-radius: 9px; padding: 0 10px;
+        }
+        .placeholder-screen.screen-1 .main .block.tags span:nth-child(1) { background: #8b5cf6; }
+        .placeholder-screen.screen-1 .main .block.tags span:nth-child(2) { background: #6366f1; }
+        .placeholder-screen.screen-1 .main .block.tags span:nth-child(3) { background: #ec4899; }
+
+        .placeholder-screen.screen-2 .main .block.content { background: linear-gradient(135deg, #1e2235 60%, #1a2332); }
+        .placeholder-screen.screen-2 .main .block.tags span:nth-child(1) { background: #3abab4; }
+        .placeholder-screen.screen-2 .main .block.tags span:nth-child(2) { background: #0ea5e9; }
+
+        .placeholder-screen.screen-3 .sidebar .item:nth-child(2) { background: #3abab4; opacity: 0.7; }
+        .placeholder-screen.screen-3 .main .block.content {
+            background: repeating-linear-gradient(0deg, #1e2235 0px, #1e2235 20px, #252a3a 20px, #252a3a 21px);
+        }
+        .placeholder-screen.screen-3 .main .block.tags span:nth-child(1) { background: #f59e0b; }
+        .placeholder-screen.screen-3 .main .block.tags span:nth-child(2) { background: #ef4444; }
+        .placeholder-screen.screen-3 .main .block.tags span:nth-child(3) { background: #8b5cf6; }
+    </style>
+</head>
+<body>
+    <h1>TruSpace — Connected Workflow</h1>
+    <div class="demo-wrapper">
+        <div id="truspace-anim" class="screenshot-animation-container"></div>
+    </div>
+    <p class="hint">Animation loops: full view → two connected → three-node network → zoom back in</p>
+
+    <script>
+        // === screenshot-animation.js inlined for preview ===
+        function initScreenshotAnimation(containerId, options = {}) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            const labels = options.labels || ['Screen 1', 'Screen 2', 'Screen 3'];
+            const screenClasses = options.screenClasses || ['screen-1', 'screen-2', 'screen-3'];
+            const phaseDuration = options.phaseDuration || 2500;
+            const pauseDuration = options.pauseDuration || 1200;
+            const useImages = options.images && options.images.length > 0;
+
+            const canvas = document.createElement('div');
+            canvas.className = 'screenshot-animation-canvas';
+
+            const svgNS = 'http://www.w3.org/2000/svg';
+            const svg = document.createElementNS(svgNS, 'svg');
+            svg.classList.add('connector-lines');
+            svg.setAttribute('preserveAspectRatio', 'none');
+
+            const line1 = document.createElementNS(svgNS, 'line');
+            const line2 = document.createElementNS(svgNS, 'line');
+            const line3 = document.createElementNS(svgNS, 'line');
+            const dots = [];
+            for (let i = 0; i < 3; i++) {
+                const dot = document.createElementNS(svgNS, 'circle');
+                dot.classList.add('node-dot');
+                dot.setAttribute('r', '5');
+                dots.push(dot);
+                svg.appendChild(dot);
+            }
+            svg.appendChild(line1);
+            svg.appendChild(line2);
+            svg.appendChild(line3);
+            canvas.appendChild(svg);
+
+            const cards = [];
+            for (let i = 0; i < 3; i++) {
+                const card = document.createElement('div');
+                card.className = 'screenshot-card';
+
+                if (useImages) {
+                    const img = document.createElement('img');
+                    img.src = options.images[i] || options.images[0];
+                    img.alt = labels[i];
+                    img.draggable = false;
+                    card.appendChild(img);
+                } else {
+                    // Build placeholder screenshot UI
+                    const screen = document.createElement('div');
+                    screen.className = 'placeholder-screen ' + (screenClasses[i] || '');
+                    screen.innerHTML = `
+                        <div class="topbar">
+                            <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+                        </div>
+                        <div class="body">
+                            <div class="sidebar">
+                                <div class="item ${i === 0 ? 'active' : ''}"></div>
+                                <div class="item"></div>
+                                <div class="item"></div>
+                                <div class="item"></div>
+                            </div>
+                            <div class="main">
+                                <div class="block header"></div>
+                                <div class="block tags"><span></span><span></span><span></span></div>
+                                <div class="block content"></div>
+                            </div>
+                        </div>`;
+                    card.appendChild(screen);
+                }
+
+                const label = document.createElement('div');
+                label.className = 'card-label';
+                label.textContent = labels[i];
+                card.appendChild(label);
+
+                cards.push(card);
+                canvas.appendChild(card);
+            }
+
+            container.appendChild(canvas);
+
+            const layouts = {
+                solo: [{ left: 2, top: 2, width: 96, height: 96 }],
+                duo: [
+                    { left: 3, top: 12, width: 44, height: 76 },
+                    { left: 53, top: 12, width: 44, height: 76 }
+                ],
+                trio: [
+                    { left: 3, top: 5, width: 35, height: 55 },
+                    { left: 55, top: 5, width: 35, height: 55 },
+                    { left: 29, top: 48, width: 35, height: 55 }
+                ]
+            };
+
+            function applyCardLayout(ci, layout) {
+                const c = cards[ci];
+                c.style.left = layout.left + '%';
+                c.style.top = layout.top + '%';
+                c.style.width = layout.width + '%';
+                c.style.height = layout.height + '%';
+            }
+
+            function getCardCenter(l) {
+                return { x: l.left + l.width / 2, y: l.top + l.height / 2 };
+            }
+
+            function setLine(line, c1, c2) {
+                line.setAttribute('x1', c1.x + '%');
+                line.setAttribute('y1', c1.y + '%');
+                line.setAttribute('x2', c2.x + '%');
+                line.setAttribute('y2', c2.y + '%');
+                line.classList.add('visible');
+            }
+
+            function updateConnectors(activeLayouts) {
+                if (activeLayouts.length >= 2) {
+                    setLine(line1, getCardCenter(activeLayouts[0]), getCardCenter(activeLayouts[1]));
+                    dots[0].setAttribute('cx', getCardCenter(activeLayouts[0]).x + '%');
+                    dots[0].setAttribute('cy', getCardCenter(activeLayouts[0]).y + '%');
+                    dots[0].classList.add('visible');
+                    dots[1].setAttribute('cx', getCardCenter(activeLayouts[1]).x + '%');
+                    dots[1].setAttribute('cy', getCardCenter(activeLayouts[1]).y + '%');
+                    dots[1].classList.add('visible');
+                }
+                if (activeLayouts.length >= 3) {
+                    setLine(line2, getCardCenter(activeLayouts[1]), getCardCenter(activeLayouts[2]));
+                    setLine(line3, getCardCenter(activeLayouts[2]), getCardCenter(activeLayouts[0]));
+                    dots[2].setAttribute('cx', getCardCenter(activeLayouts[2]).x + '%');
+                    dots[2].setAttribute('cy', getCardCenter(activeLayouts[2]).y + '%');
+                    dots[2].classList.add('visible');
+                }
+            }
+
+            function hideConnectors() {
+                [line1, line2, line3].forEach(l => l.classList.remove('visible'));
+                dots.forEach(d => d.classList.remove('visible'));
+            }
+            function hideAllCards() {
+                cards.forEach(c => c.classList.remove('visible', 'connected'));
+            }
+
+            let phase = 0, animTimer = null;
+
+            function runPhase() {
+                switch (phase) {
+                    case 0:
+                        hideConnectors(); hideAllCards();
+                        applyCardLayout(0, layouts.solo[0]);
+                        requestAnimationFrame(() => cards[0].classList.add('visible'));
+                        break;
+                    case 1:
+                        applyCardLayout(0, layouts.duo[0]);
+                        applyCardLayout(1, layouts.duo[1]);
+                        cards[0].classList.add('connected');
+                        requestAnimationFrame(() => cards[1].classList.add('visible', 'connected'));
+                        setTimeout(() => updateConnectors([layouts.duo[0], layouts.duo[1]]), 400);
+                        break;
+                    case 2:
+                        hideConnectors();
+                        applyCardLayout(0, layouts.trio[0]);
+                        applyCardLayout(1, layouts.trio[1]);
+                        applyCardLayout(2, layouts.trio[2]);
+                        requestAnimationFrame(() => cards[2].classList.add('visible', 'connected'));
+                        setTimeout(() => updateConnectors([layouts.trio[0], layouts.trio[1], layouts.trio[2]]), 400);
+                        break;
+                    case 3:
+                        const t = layouts.trio[0];
+                        const scale = Math.min(100 / t.width, 100 / t.height) * 0.92;
+                        const cx = t.left + t.width / 2, cy = t.top + t.height / 2;
+                        canvas.style.transform = `scale(${scale}) translate(${(50 - cx)}%, ${(50 - cy)}%)`;
+                        break;
+                    case 4:
+                        canvas.style.transition = 'none';
+                        canvas.style.transform = 'scale(1) translate(0,0)';
+                        hideConnectors(); hideAllCards();
+                        void canvas.offsetHeight;
+                        canvas.style.transition = '';
+                        phase = -1;
+                        setTimeout(() => { phase = 0; runPhase(); scheduleNext(); }, 300);
+                        return;
+                }
+                scheduleNext();
+            }
+
+            function scheduleNext() {
+                const delay = phase === 0 ? phaseDuration : (phaseDuration + pauseDuration);
+                animTimer = setTimeout(() => { phase++; runPhase(); }, delay);
+            }
+
+            runPhase();
+            return { destroy() { clearTimeout(animTimer); container.removeChild(canvas); } };
+        }
+
+        // Initialize with placeholder screens (replace with real images in production)
+        initScreenshotAnimation('truspace-anim', {
+            // images: ['screenshot1.png', 'screenshot2.png', 'screenshot3.png'],
+            labels: ['Document Details', 'Dashboard', 'Statistics'],
+            phaseDuration: 2800,
+            pauseDuration: 1000
+        });
+    </script>
+</body>
+</html>
