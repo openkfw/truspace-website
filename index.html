@@ -1,430 +1,1394 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TruSpace – AI-Infused, Decentralized & Sovereign Document Workspace</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="canonical" href="https://web.truspace.dev/">
-    
-    <!-- Google Site Verification -->
-    <meta name="google-site-verification" content="ccx9aiUGdxb-_wtLnTWGd23-sg9xZGj_xxfe_rPMhDc">
-    
-    <!-- Standard SEO -->
-    <meta name="description" content="TruSpace is an AI-powered, decentralized, sovereign document workspace for efficient multi-stakeholder collaboration. Built with Next.js, Express.js, SQLite, IPFS Cluster, and enhanced by Ollama and Open Web UI. 100% open-source and self-hostable.">
-    <meta name="keywords" content="TruSpace, decentralized document workspace, sovereign data, AI document analysis, IPFS cluster, local LLM, Ollama, Open Web UI, open-source document collaboration, Next.js, Express.js, SQLite, self-hostable AI">
-    <meta name="author" content="TruSpace Team">
-    <meta name="robots" content="index, follow">
+  <head>
+    <title>
+      TruSpace – AI-Infused, Decentralized & Sovereign Document Workspace
+    </title>
+    <meta charset="UTF-8" />
+    <meta
+      name="google-site-verification"
+      content="ccx9aiUGdxb-_wtLnTWGd23-sg9xZGj_xxfe_rPMhDc"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link rel="canonical" href="https://web.truspace.dev/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="TruSpace is an AI-powered, decentralized, sovereign document workspace for efficient multi-stakeholder collaboration. Built with Next.js, Express.js, SQLite, IPFS Cluster, and enhanced by Ollama and Open Web UI. 100% open-source and self-hostable."
+    />
+    <meta
+      name="keywords"
+      content="TruSpace, decentralized document workspace, sovereign data, AI document analysis, IPFS cluster, local LLM, Ollama, Open Web UI, open-source document collaboration, Next.js, self-hostable AI"
+    />
+    <meta name="author" content="TruSpace Team" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      property="og:title"
+      content="TruSpace – AI-Infused, Decentralized & Sovereign Document Workspace"
+    />
+    <meta
+      property="og:description"
+      content="Collaborative, decentralized document platform with local AI processing, IPFS storage, and full data sovereignty. 100% open-source and self-hostable."
+    />
+    <meta property="og:url" content="https://web.truspace.dev/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://web.truspace.dev/preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="TruSpace" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="TruSpace – AI-Infused, Decentralized & Sovereign Document Workspace"
+    />
+    <meta
+      name="twitter:description"
+      content="Collaborative, decentralized document platform with local AI processing, IPFS storage, and full data sovereignty."
+    />
+    <meta name="twitter:image" content="https://web.truspace.dev/preview.png" />
+    <meta name="theme-color" content="#0d1117" />
 
-    <!-- Open Graph for Facebook/LinkedIn -->
-    <meta property="og:title" content="TruSpace – AI-Infused, Decentralized & Sovereign Document Workspace">
-    <meta property="og:description" content="Collaborative, decentralized document platform with local AI processing, IPFS storage, and full data sovereignty. 100% open-source and self-hostable.">
-    <meta property="og:url" content="https://web.truspace.dev/">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://web.truspace.dev/preview.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="TruSpace - Decentralized document collaboration platform">
-    <meta property="og:site_name" content="TruSpace">
-    <meta property="og:locale" content="en_US">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="TruSpace – AI-Infused, Decentralized & Sovereign Document Workspace">
-    <meta name="twitter:description" content="Collaborative, decentralized document platform with local AI processing, IPFS storage, and full data sovereignty.">
-    <meta name="twitter:image" content="https://web.truspace.dev/preview.png">
-    <meta name="twitter:image:alt" content="TruSpace - Decentralized document collaboration platform">
-
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#111827">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Structured Data for Rich Snippets -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "TruSpace",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Web, Self-hosted",
-      "description": "AI-powered, decentralized, sovereign document workspace for multi-stakeholder collaboration with IPFS storage and local AI processing.",
-      "url": "https://web.truspace.dev/",
-      "image": "https://web.truspace.dev/preview.png",
-      "author": {
-        "@type": "Organization",
-        "name": "OpenKFW",
-        "url": "https://github.com/openkfw"
-      },
-      "license": "https://opensource.org/licenses/GPL-3.0",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "featureList": [
-        "Decentralized IPFS storage",
-        "Local AI processing with Ollama",
-        "End-to-end data sovereignty",
-        "Real-time collaboration",
-        "Self-hostable",
-        "Open source"
-      ],
-      "screenshot": "https://web.truspace.dev/screenshot1.png"
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "TruSpace",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, Self-hosted",
+        "description": "AI-powered, decentralized, sovereign document workspace for multi-stakeholder collaboration.",
+        "url": "https://web.truspace.dev/",
+        "author": {
+          "@type": "Organization",
+          "name": "OpenKFW",
+          "url": "https://github.com/openkfw"
+        },
+        "license": "https://opensource.org/licenses/GPL-3.0",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      }
     </script>
 
-    <!-- Organization Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "TruSpace",
-      "url": "https://web.truspace.dev/",
-      "logo": "https://web.truspace.dev/logo.svg",
-      "sameAs": [
-        "https://github.com/openkfw/TruSpace"
-      ]
-    }
-    </script>
-</head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="header__nav" aria-label="Main navigation">
-            <a href="https://truspace.dev/login" class="btn btn--primary">Login</a>
-            <a href="https://truspace.dev/register" class="btn btn--text">Register</a>
-            <a href="https://github.com/openkfw/TruSpace" class="header__github" aria-label="GitHub repository">
-                <span class="sr-only">GitHub</span>
-                <svg class="icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
-                </svg>
-            </a>
-        </nav>
+    <style>
+      /* ── Reset & Base ─────────────────────────────────────────── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --bg: #0d1117;
+        --bg-2: #161b22;
+        --bg-3: #1c2230;
+        --border: rgba(255, 255, 255, 0.08);
+        --accent: #6366f1;
+        --accent-h: #818cf8;
+        --accent-2: #06b6d4;
+        --text: #f0f4ff;
+        --text-muted: #8b9ab5;
+        --code-bg: #0d1117;
+        --radius: 12px;
+        --font-mono: "JetBrains Mono", "Fira Code", "Cascadia Code", monospace;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: "DM Sans", "Outfit", system-ui, sans-serif;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* Google Fonts – loaded inline to avoid render-blocking for critical path */
+      @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap");
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      /* ── Utility ──────────────────────────────────────────────── */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 12px;
+        border-radius: 99px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        background: rgba(99, 102, 241, 0.12);
+        border: 1px solid rgba(99, 102, 241, 0.3);
+        color: var(--accent-h);
+      }
+
+      /* ── Header ───────────────────────────────────────────────── */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(13, 17, 23, 0.85);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 60px;
+      }
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: "Syne", sans-serif;
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: var(--text);
+      }
+      .nav-logo img {
+        height: 28px;
+        width: auto;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .nav-link {
+        padding: 6px 14px;
+        border-radius: 8px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--text-muted);
+        transition:
+          color 0.2s,
+          background 0.2s;
+      }
+      .nav-link:hover {
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.06);
+      }
+      .nav-link.docs {
+        color: var(--accent-h);
+        border: 1px solid rgba(99, 102, 241, 0.3);
+      }
+      .nav-link.docs:hover {
+        background: rgba(99, 102, 241, 0.1);
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 7px 18px;
+        border-radius: 8px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        transition: all 0.2s;
+        cursor: pointer;
+      }
+      .btn-primary {
+        background: var(--accent);
+        color: #fff;
+      }
+      .btn-primary:hover {
+        background: var(--accent-h);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+      }
+      .btn-ghost {
+        color: var(--text-muted);
+      }
+      .btn-ghost:hover {
+        color: var(--text);
+      }
+
+      /* GitHub icon */
+      .github-icon {
+        width: 20px;
+        height: 20px;
+        fill: var(--text-muted);
+        transition: fill 0.2s;
+      }
+      .github-icon:hover {
+        fill: var(--text);
+      }
+
+      /* ── Hero ─────────────────────────────────────────────────── */
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 80px 0 60px;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -120px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 900px;
+        height: 600px;
+        background: radial-gradient(
+          ellipse at center,
+          rgba(99, 102, 241, 0.18) 0%,
+          rgba(6, 182, 212, 0.08) 50%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+      }
+      @media (max-width: 900px) {
+        .hero-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero-visual {
+          display: none;
+        }
+      }
+      .hero-eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 24px;
+        flex-wrap: wrap;
+      }
+      .hero h1 {
+        font-family: "Syne", sans-serif;
+        font-size: clamp(2.4rem, 5vw, 3.6rem);
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        margin-bottom: 20px;
+      }
+      .hero h1 span {
+        background: linear-gradient(135deg, var(--accent-h), var(--accent-2));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .hero-desc {
+        font-size: 1.125rem;
+        color: var(--text-muted);
+        max-width: 500px;
+        margin-bottom: 36px;
+      }
+      .hero-cta {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .btn-lg {
+        padding: 12px 28px;
+        font-size: 1rem;
+        border-radius: 10px;
+      }
+
+      /* Docs callout banner */
+      .docs-callout {
+        margin-top: 40px;
+        padding: 16px 20px;
+        background: rgba(99, 102, 241, 0.07);
+        border: 1px solid rgba(99, 102, 241, 0.25);
+        border-radius: var(--radius);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 0.9rem;
+      }
+      .docs-callout svg {
+        flex-shrink: 0;
+        color: var(--accent-h);
+      }
+      .docs-callout a {
+        color: var(--accent-h);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        font-weight: 600;
+      }
+      .docs-callout a:hover {
+        color: #fff;
+      }
+
+      /* Screenshot */
+      .hero-visual img {
+        width: 100%;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        box-shadow:
+          0 40px 120px rgba(0, 0, 0, 0.6),
+          0 0 0 1px rgba(99, 102, 241, 0.15);
+        animation: float 6s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-12px);
+        }
+      }
+
+      /* ── Section base ─────────────────────────────────────────── */
+      section {
+        padding: 96px 0;
+      }
+      .section-label {
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent-h);
+        margin-bottom: 14px;
+      }
+      .section-title {
+        font-family: "Syne", sans-serif;
+        font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: -0.01em;
+        margin-bottom: 16px;
+      }
+      .section-desc {
+        font-size: 1.05rem;
+        color: var(--text-muted);
+        max-width: 560px;
+      }
+      .section-header {
+        margin-bottom: 64px;
+      }
+      .section-header.center {
+        text-align: center;
+      }
+      .section-header.center .section-desc {
+        margin: 0 auto;
+      }
+
+      /* ── Problem section ──────────────────────────────────────── */
+      .problem-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      @media (max-width: 768px) {
+        .problem-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .problem-card {
+        padding: 28px;
+        border-radius: var(--radius);
+        background: var(--bg-2);
+        border: 1px solid var(--border);
+        transition:
+          border-color 0.3s,
+          transform 0.3s;
+      }
+      .problem-card:hover {
+        border-color: rgba(99, 102, 241, 0.4);
+        transform: translateY(-4px);
+      }
+      .problem-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        background: rgba(99, 102, 241, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+        color: var(--accent-h);
+        font-size: 1.3rem;
+      }
+      .problem-card h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .problem-card p {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        line-height: 1.65;
+      }
+
+      /* ── Quickstart ───────────────────────────────────────────── */
+      .quickstart {
+        background: var(--bg-2);
+      }
+      .quickstart-inner {
+        display: grid;
+        grid-template-columns: 1fr 1.3fr;
+        gap: 64px;
+        align-items: start;
+      }
+      @media (max-width: 900px) {
+        .quickstart-inner {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .steps {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .step {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+      }
+      .step-num {
+        flex-shrink: 0;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: #fff;
+      }
+      .step-content h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+      .step-content p {
+        font-size: 0.875rem;
+        color: var(--text-muted);
+      }
+
+      /* Code terminal */
+      .terminal {
+        background: #0a0e16;
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+      }
+      .terminal-bar {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 12px 16px;
+        background: rgba(255, 255, 255, 0.04);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .terminal-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+      .td-red {
+        background: #ff5f57;
+      }
+      .td-yellow {
+        background: #febc2e;
+      }
+      .td-green {
+        background: #28c840;
+      }
+      .terminal-title {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin-left: 8px;
+        font-family: var(--font-mono);
+      }
+      .terminal-body {
+        padding: 24px;
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        line-height: 1.8;
+      }
+      .t-comment {
+        color: #4a5568;
+      }
+      .t-prompt {
+        color: var(--accent-h);
+        user-select: none;
+      }
+      .t-cmd {
+        color: #e2e8f0;
+      }
+      .t-out {
+        color: #68d391;
+      }
+      .t-url {
+        color: var(--accent-2);
+      }
+      .t-line {
+        display: block;
+      }
+
+      .terminal-info {
+        margin-top: 20px;
+        padding: 14px 18px;
+        background: rgba(6, 182, 212, 0.06);
+        border: 1px solid rgba(6, 182, 212, 0.2);
+        border-radius: 10px;
+        font-size: 0.85rem;
+      }
+      .terminal-info strong {
+        color: var(--accent-2);
+      }
+      .terminal-info ul {
+        margin-top: 8px;
+        padding-left: 18px;
+        color: var(--text-muted);
+      }
+      .terminal-info li {
+        margin-bottom: 4px;
+      }
+
+      /* ── Features ─────────────────────────────────────────────── */
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+      @media (max-width: 768px) {
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .feature-card {
+        padding: 32px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: linear-gradient(145deg, var(--bg-2), var(--bg-3));
+        transition:
+          border-color 0.3s,
+          transform 0.3s;
+      }
+      .feature-card:hover {
+        border-color: rgba(99, 102, 241, 0.4);
+        transform: translateY(-4px);
+      }
+      .feature-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: linear-gradient(
+          135deg,
+          rgba(99, 102, 241, 0.2),
+          rgba(6, 182, 212, 0.15)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        font-size: 1.4rem;
+      }
+      .feature-card h3 {
+        font-size: 1.05rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      .feature-card p {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        line-height: 1.65;
+      }
+
+      /* ── Video section ────────────────────────────────────────── */
+      .video-wrapper {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--border);
+        box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+        aspect-ratio: 16/9;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .video-wrapper iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      /* ── Logo cloud ───────────────────────────────────────────── */
+      .logos {
+        padding: 64px 0;
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      }
+      .logos p {
+        text-align: center;
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 36px;
+        font-weight: 600;
+      }
+      .logos-grid {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 48px;
+        flex-wrap: wrap;
+      }
+      .logos-grid img {
+        height: 32px;
+        width: auto;
+        opacity: 0.5;
+        filter: grayscale(1);
+        transition:
+          opacity 0.3s,
+          filter 0.3s;
+      }
+      .logos-grid img:hover {
+        opacity: 0.9;
+        filter: grayscale(0);
+      }
+
+      /* ── Docs section ─────────────────────────────────────────── */
+      .docs-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      @media (max-width: 768px) {
+        .docs-cards {
+          grid-template-columns: 1fr;
+        }
+      }
+      .doc-card {
+        padding: 24px;
+        border-radius: var(--radius);
+        background: var(--bg-2);
+        border: 1px solid var(--border);
+        transition:
+          border-color 0.3s,
+          transform 0.2s;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .doc-card:hover {
+        border-color: rgba(99, 102, 241, 0.5);
+        transform: translateY(-3px);
+      }
+      .doc-card-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .doc-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 8px;
+        background: rgba(99, 102, 241, 0.12);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+      }
+      .doc-card h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+      }
+      .doc-card p {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        flex: 1;
+      }
+      .doc-link {
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--accent-h);
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .doc-link:hover {
+        color: #fff;
+      }
+
+      /* ── CTA ──────────────────────────────────────────────────── */
+      .cta {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(
+          135deg,
+          rgba(99, 102, 241, 0.1),
+          rgba(6, 182, 212, 0.06)
+        );
+        border-radius: 20px;
+        padding: 80px 48px;
+        text-align: center;
+        border: 1px solid rgba(99, 102, 241, 0.2);
+        margin-bottom: 80px;
+      }
+      .cta::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse at 50% 0%,
+          rgba(99, 102, 241, 0.15),
+          transparent 60%
+        );
+        pointer-events: none;
+      }
+      .cta h2 {
+        font-family: "Syne", sans-serif;
+        font-size: clamp(1.8rem, 3vw, 2.8rem);
+        font-weight: 800;
+        margin-bottom: 16px;
+      }
+      .cta p {
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        margin-bottom: 36px;
+      }
+      .cta-buttons {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .btn-outline {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: var(--text);
+      }
+      .btn-outline:hover {
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 255, 255, 0.4);
+      }
+
+      /* ── Footer ───────────────────────────────────────────────── */
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 40px 0;
+      }
+      .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .footer-links {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .footer-links a {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
+      .footer-links a:hover {
+        color: var(--text);
+      }
+      footer p {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
+
+      /* ── Divider ──────────────────────────────────────────────── */
+      .divider {
+        border: 0;
+        border-top: 1px solid var(--border);
+      }
+
+      /* ── Fade-in animations ───────────────────────────────────── */
+      .fade-up {
+        opacity: 0;
+        transform: translateY(28px);
+        animation: fadeUp 0.65s ease forwards;
+      }
+      @keyframes fadeUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .delay-1 {
+        animation-delay: 0.1s;
+      }
+      .delay-2 {
+        animation-delay: 0.2s;
+      }
+      .delay-3 {
+        animation-delay: 0.3s;
+      }
+
+      /* ── Responsive nav ───────────────────────────────────────── */
+      @media (max-width: 600px) {
+        .nav-links .nav-link:not(.docs) {
+          display: none;
+        }
+        .hero-cta {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ═══ HEADER ══════════════════════════════════════════════ -->
+    <header>
+      <nav class="container nav">
+        <a href="/" class="nav-logo">
+          <img
+            src="/images/logo.svg"
+            alt="TruSpace logo"
+            onerror="this.style.display = 'none'"
+          />
+          TruSpace
+        </a>
+        <div class="nav-links">
+          <a href="/site/" class="nav-link docs"> 📖 Docs </a>
+          <a href="/site/quickstart/" class="nav-link">Quick Start</a>
+          <a
+            href="https://github.com/openkfw/TruSpace"
+            class="nav-link"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg class="github-icon" viewBox="0 0 24 24" aria-label="GitHub">
+              <path
+                fill-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
+          <a href="https://truspace.dev/register" class="btn btn-ghost"
+            >Register</a
+          >
+          <a href="https://truspace.dev/login" class="btn btn-primary">Login</a>
+        </div>
+      </nav>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero__gradient" aria-hidden="true">
-                <div class="hero__gradient-shape"></div>
+      <!-- ═══ HERO ════════════════════════════════════════════════ -->
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <div class="hero-eyebrow fade-up">
+              <span class="badge">🚀 v0.10 just shipped</span>
+              <a
+                href="https://github.com/openkfw/TruSpace"
+                target="_blank"
+                rel="noopener"
+                style="font-size: 0.85rem; color: var(--text-muted)"
+              >
+                View on GitHub →
+              </a>
             </div>
-            
-            <div class="container hero__container">
-                <div class="hero__content">
-                    <img src="images/logo.svg" alt="TruSpace" class="hero__logo">
-                    
-                    <div class="hero__badge-row">
-                        <span class="badge">What's new</span>
-                        <span class="hero__version">
-                            Just shipped <a href="https://github.com/openkfw/TruSpace">v0.8</a>
-                            <svg class="icon icon--sm" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/>
-                            </svg>
-                        </span>
-                        <a href="https://github.com/openkfw/TruSpace" class="hero__github-link" aria-label="View on GitHub">
-                            <span class="sr-only">GitHub</span>
-                            <svg class="icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
-                            </svg>
-                        </a>
-                    </div>
-                    
-                    <h1 class="hero__title">AI-infused trusted document collaboration</h1>
-                    <p class="hero__subtitle">Share documents with whoever you decide and no one else - keep control over your data and the AI you're working with.</p>
-                </div>
-                
-                <div class="hero__image-wrapper">
-                    <img 
-                        src="images/screenshot1.png" 
-                        alt="TruSpace application interface showing decentralized document collaboration with AI features"
-                        width="2432"
-                        height="1442"
-                        loading="eager"
-                        class="hero__image"
-                    >
-                </div>
-            </div>
-        </section>
 
-        <!-- Problem Section -->
-        <section class="section problem" aria-labelledby="problem-heading">
-            <div class="container">
-                <div class="section__header">
-                    <h2 class="section__eyebrow" id="problem-heading">Inspired by the fediverse</h2>
-                    <p class="section__title">Why another document exchange platform?</p>
-                    <p class="section__subtitle">Who owns your data when collaborating across organisations?</p>
-                </div>
-                
-                <div class="cards cards--3col">
-                    <article class="card">
-                        <div class="card__icon">
-                            <!-- Cloud Bolt Icon -->
-                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M4.5 9.75a6 6 0 0 1 11.573-2.226 3.75 3.75 0 0 1 4.133 4.303A4.5 4.5 0 0 1 18 20.25H6.75a5.25 5.25 0 0 1-2.23-10.004 6.072 6.072 0 0 1-.02-.496ZM12.75 12a.75.75 0 0 0-1.5 0v4.94l-1.72-1.72a.75.75 0 0 0-1.06 1.06l3 3a.75.75 0 0 0 1.06 0l3-3a.75.75 0 1 0-1.06-1.06l-1.72 1.72V12Z" clip-rule="evenodd"/>
-                            </svg>
-                        </div>
-                        <h3 class="card__title">Do you store documents using a service by BigTech</h3>
-                        <p class="card__text">Are you sure they don't read your data? Or delete it because of an executive order? Or even change it? Will they decide to charge more for their service once you are locked in? Who owns the admin account to the cloud server?</p>
-                        <a href="https://github.com/openkfw/TruSpace" class="card__link">
-                            Learn more <span aria-hidden="true">→</span>
-                        </a>
-                    </article>
-                    
-                    <article class="card">
-                        <div class="card__icon">
-                            <!-- Server Icon -->
-                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path d="M4.08 5.227A3 3 0 0 1 6.979 3H17.02a3 3 0 0 1 2.9 2.227l2.113 7.926A5.228 5.228 0 0 0 18.75 12H5.25a5.228 5.228 0 0 0-3.284 1.153L4.08 5.227Z"/>
-                                <path fill-rule="evenodd" d="M5.25 13.5a3.75 3.75 0 1 0 0 7.5h13.5a3.75 3.75 0 1 0 0-7.5H5.25Zm10.5 4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm3.75-.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" clip-rule="evenodd"/>
-                            </svg>
-                        </div>
-                        <h3 class="card__title">Do you store docs using a server of one organisation</h3>
-                        <p class="card__text">Ok, you agree that data is stored by one organisation using a sovereign open source server like NextCloud. Do you trust that it will work out forever? That they won't be hacked? That we're all friends forever?</p>
-                        <a href="https://github.com/openkfw/TruSpace" class="card__link">
-                            Learn more <span aria-hidden="true">→</span>
-                        </a>
-                    </article>
-                    
-                    <article class="card">
-                        <div class="card__icon">
-                            <!-- Envelope Icon -->
-                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path d="M19.5 22.5a3 3 0 0 0 3-3v-8.174l-6.879 4.022 3.485 1.876a.75.75 0 1 1-.712 1.321l-5.683-3.06a1.5 1.5 0 0 0-1.422 0l-5.683 3.06a.75.75 0 0 1-.712-1.32l3.485-1.877L1.5 11.326V19.5a3 3 0 0 0 3 3h15Z"/>
-                                <path d="M1.5 9.589v-.745a3 3 0 0 1 1.578-2.642l7.5-4.038a3 3 0 0 1 2.844 0l7.5 4.038A3 3 0 0 1 22.5 8.844v.745l-8.426 4.926-.652-.351a3 3 0 0 0-2.844 0l-.652.351L1.5 9.589Z"/>
-                            </svg>
-                        </div>
-                        <h3 class="card__title">Or do you use e-mail to exchange documents</h3>
-                        <p class="card__text">Versioning? Comments? Reviews? All of this with email attachments flying back and forth? And which version was the latest? And who has access to which version?</p>
-                        <a href="https://github.com/openkfw/TruSpace" class="card__link">
-                            Learn more <span aria-hidden="true">→</span>
-                        </a>
-                    </article>
-                </div>
-            </div>
-        </section>
+            <h1 class="fade-up delay-1">
+              Trusted document<br />
+              <span>collaboration</span>,<br />
+              on your terms.
+            </h1>
 
-        <!-- Feature Details Section -->
-        <section class="section feature-details" aria-labelledby="features-heading">
-            <div class="container">
-                <div class="section__header section__header--center">
-                    <h2 class="section__eyebrow" id="features-heading">Sovereign - decentralized - secure</h2>
-                    <p class="section__title">Trusted Space - using a federated private network</p>
-                    <p class="section__subtitle">Don't depend on anyone - keep control of your documents and keep them in sync in your network</p>
-                </div>
-            </div>
-            
-            <div class="feature-details__image-wrapper">
-                <div class="container">
-                    <img 
-                        src="images/truspaceschema.png" 
-                        alt="TruSpace architecture diagram showing federated private network with IPFS nodes connecting multiple organizations"
-                        class="feature-details__image"
-                        loading="lazy"
-                    >
-                    <div class="feature-details__image-fade" aria-hidden="true"></div>
-                </div>
-            </div>
-            
-            <div class="container">
-                <dl class="feature-grid">
-                    <div class="feature-item">
-                        <dt class="feature-item__title">
-                            <svg class="feature-item__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M5.5 17a4.5 4.5 0 0 1-1.44-8.765 4.5 4.5 0 0 1 8.302-3.046 3.5 3.5 0 0 1 4.504 4.272A4 4 0 0 1 15 17H5.5Zm3.75-2.75a.75.75 0 0 0 1.5 0V9.66l1.95 2.1a.75.75 0 1 0 1.1-1.02l-3.25-3.5a.75.75 0 0 0-1.1 0l-3.25 3.5a.75.75 0 1 0 1.1 1.02l1.95-2.1v4.59Z" clip-rule="evenodd"/>
-                            </svg>
-                            Sovereignty
-                        </dt>
-                        <dd class="feature-item__desc">Take back control of your data with decentralized, tamper-proof storage—your documents, your rules, no middlemen.</dd>
-                    </div>
-                    
-                    <div class="feature-item">
-                        <dt class="feature-item__title">
-                            <svg class="feature-item__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M10 1a4.5 4.5 0 0 0-4.5 4.5V9H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-.5V5.5A4.5 4.5 0 0 0 10 1Zm3 8V5.5a3 3 0 1 0-6 0V9h6Z" clip-rule="evenodd"/>
-                            </svg>
-                            Collaboration
-                        </dt>
-                        <dd class="feature-item__desc">Work smarter with a shared space that unites documents, chat, and versioning—finally, real-time teamwork that doesn't suck.</dd>
-                    </div>
-                    
-                    <div class="feature-item">
-                        <dt class="feature-item__title">
-                            <svg class="feature-item__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M7.84 1.804A1 1 0 0 1 8.82 1h2.36a1 1 0 0 1 .98.804l.331 1.652a6.993 6.993 0 0 1 1.929 1.115l1.598-.54a1 1 0 0 1 1.186.447l1.18 2.044a1 1 0 0 1-.205 1.251l-1.267 1.113a7.047 7.047 0 0 1 0 2.228l1.267 1.113a1 1 0 0 1 .206 1.25l-1.18 2.045a1 1 0 0 1-1.187.447l-1.598-.54a6.993 6.993 0 0 1-1.929 1.115l-.33 1.652a1 1 0 0 1-.98.804H8.82a1 1 0 0 1-.98-.804l-.331-1.652a6.993 6.993 0 0 1-1.929-1.115l-1.598.54a1 1 0 0 1-1.186-.447l-1.18-2.044a1 1 0 0 1 .205-1.251l1.267-1.114a7.05 7.05 0 0 1 0-2.227L1.821 7.773a1 1 0 0 1-.206-1.25l1.18-2.045a1 1 0 0 1 1.187-.447l1.598.54A6.992 6.992 0 0 1 7.51 3.456l.33-1.652ZM10 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clip-rule="evenodd"/>
-                            </svg>
-                            Resilience
-                        </dt>
-                        <dd class="feature-item__desc">Built on a private IPFS network for robust sync and integrity—even during network splits, your collaboration doesn't break. With content-based addressing, data is tamper-proof.</dd>
-                    </div>
-                    
-                    <div class="feature-item">
-                        <dt class="feature-item__title">
-                            <svg class="feature-item__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path d="M4.632 3.533A2 2 0 0 1 6.577 2h6.846a2 2 0 0 1 1.945 1.533l1.976 8.234A3.489 3.489 0 0 0 16 11.5H4c-.476 0-.93.095-1.344.267l1.976-8.234Z"/>
-                                <path fill-rule="evenodd" d="M4 13a2 2 0 1 0 0 4h12a2 2 0 1 0 0-4H4Zm11.24 2a.75.75 0 0 1 .75-.75H16a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75h-.01a.75.75 0 0 1-.75-.75V15Zm-2.25-.75a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75H13a.75.75 0 0 0 .75-.75V15a.75.75 0 0 0-.75-.75h-.01Z" clip-rule="evenodd"/>
-                            </svg>
-                            Commons
-                        </dt>
-                        <dd class="feature-item__desc">Open-source and non-commercial by design—TruSpace is a digital public good meant to evolve with the community.</dd>
-                    </div>
-                    
-                    <div class="feature-item">
-                        <dt class="feature-item__title">
-                            <svg class="feature-item__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M15.312 11.424a5.5 5.5 0 0 1-9.201 2.466l-.312-.311h2.433a.75.75 0 0 0 0-1.5H3.989a.75.75 0 0 0-.75.75v4.242a.75.75 0 0 0 1.5 0v-2.43l.31.31a7 7 0 0 0 11.712-3.138.75.75 0 0 0-1.449-.39Zm1.23-3.723a.75.75 0 0 0 .219-.53V2.929a.75.75 0 0 0-1.5 0V5.36l-.31-.31A7 7 0 0 0 3.239 8.188a.75.75 0 1 0 1.448.389A5.5 5.5 0 0 1 13.89 6.11l.311.31h-2.432a.75.75 0 0 0 0 1.5h4.243a.75.75 0 0 0 .53-.219Z" clip-rule="evenodd"/>
-                            </svg>
-                            Perspective
-                        </dt>
-                        <dd class="feature-item__desc">Go beyond chatbots: check AI-generated insights through best-practice prompts that you don't have to enter yourself</dd>
-                    </div>
-                    
-                    <div class="feature-item">
-                        <dt class="feature-item__title">
-                            <svg class="feature-item__icon" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" d="M10 2.5c-1.31 0-2.526.386-3.546 1.051a.75.75 0 0 1-.82-1.256A8 8 0 0 1 18 9a22.47 22.47 0 0 1-1.228 7.351.75.75 0 1 1-1.417-.49A20.97 20.97 0 0 0 16.5 9 6.5 6.5 0 0 0 10 2.5ZM4.333 4.416a.75.75 0 0 1 .218 1.038A6.466 6.466 0 0 0 3.5 9a7.966 7.966 0 0 1-1.293 4.362.75.75 0 0 1-1.257-.819A6.466 6.466 0 0 0 2 9c0-1.61.476-3.11 1.295-4.365a.75.75 0 0 1 1.038-.219ZM10 6.12a3 3 0 0 0-3.001 3.041 11.455 11.455 0 0 1-2.697 7.24.75.75 0 0 1-1.148-.965A9.957 9.957 0 0 0 5.5 9c0-.028.002-.055.004-.082a4.5 4.5 0 0 1 8.996.084V9.15l-.005.297a.75.75 0 1 1-1.5-.034c.003-.11.004-.219.005-.328a3 3 0 0 0-3-2.965Zm0 2.13a.75.75 0 0 1 .75.75c0 3.51-1.187 6.745-3.181 9.323a.75.75 0 1 1-1.186-.918A13.687 13.687 0 0 0 9.25 9a.75.75 0 0 1 .75-.75Zm3.529 3.698a.75.75 0 0 1 .584.885 18.883 18.883 0 0 1-2.257 5.84.75.75 0 1 1-1.29-.764 17.386 17.386 0 0 0 2.078-5.377.75.75 0 0 1 .885-.584Z" clip-rule="evenodd"/>
-                            </svg>
-                            Choice
-                        </dt>
-                        <dd class="feature-item__desc">Pick the AI that aligns with your values—whether it's OpenAI, LLAMA, or your own model, you're in charge.</dd>
-                    </div>
-                </dl>
-            </div>
-            
-            <!-- Video Section -->
-            <div class="video-section">
-                <div class="container">
-                    <div class="video-wrapper">
-                        <iframe 
-                            src="https://www.youtube.com/embed/dpo_D3NJpqE?si=CnmQLS9RWeJ9sjJx"
-                            title="TruSpace Demo - Decentralized Document Collaboration Platform"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen
-                            loading="lazy"
-                        ></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <p class="hero-desc fade-up delay-2">
+              AI-infused. Decentralized. Sovereign. Share documents with exactly
+              who you decide — with local AI and IPFS storage that nobody else
+              controls.
+            </p>
 
-        <!-- Feature Section -->
-        <section class="section features" aria-labelledby="features2-heading">
-            <div class="container">
-                <div class="section__header section__header--center">
-                    <h2 class="section__eyebrow" id="features2-heading">Simply work together</h2>
-                    <p class="section__title">Decentralized data storage and local sovereign AI</p>
-                    <p class="section__subtitle">All data is stored and processed locally using IPFS - it cannot be manipulated</p>
-                </div>
-                
-                <div class="cards cards--3col">
-                    <article class="card card--feature">
-                        <div class="card__icon card__icon--large">
-                            <!-- Lightning Bolt Icon -->
-                            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"/>
-                            </svg>
-                        </div>
-                        <h3 class="card__title">Sovereign</h3>
-                        <p class="card__text">All the data on your server. With open code. Nothing to hide. Full control of the data - and with content-based addressing no chance for hackers.</p>
-                        <a href="https://github.com/openkfw/TruSpace" class="card__link">
-                            Learn more <span aria-hidden="true">→</span>
-                        </a>
-                    </article>
-                    
-                    <article class="card card--feature">
-                        <div class="card__icon card__icon--large">
-                            <!-- Users Icon -->
-                            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z"/>
-                            </svg>
-                        </div>
-                        <h3 class="card__title">Decentralized</h3>
-                        <p class="card__text">You can't agree who should host the data? You don't have to. The IPFS cluster syncs everything across everyone who likes to join the network. And no one else.</p>
-                        <a href="https://github.com/openkfw/TruSpace" class="card__link">
-                            Learn more <span aria-hidden="true">→</span>
-                        </a>
-                    </article>
-                    
-                    <article class="card card--feature">
-                        <div class="card__icon card__icon--large">
-                            <!-- Calendar Icon -->
-                            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z"/>
-                            </svg>
-                        </div>
-                        <h3 class="card__title">AI-infused</h3>
-                        <p class="card__text">Pre-analyse all documents for summaries, inconsistencies and everything you like. Of course with locally hosted AI and the engine that you choose.</p>
-                        <a href="https://github.com/openkfw/TruSpace" class="card__link">
-                            Learn more <span aria-hidden="true">→</span>
-                        </a>
-                    </article>
-                </div>
+            <div class="hero-cta fade-up delay-3">
+              <a href="#quickstart" class="btn btn-primary btn-lg">
+                ⚡ Try in 5 minutes
+              </a>
+              <a
+                href="https://truspace.dev/register"
+                class="btn btn-outline btn-lg"
+              >
+                Live Demo →
+              </a>
             </div>
-        </section>
 
-        <!-- Logo Cloud Section -->
-        <section class="section logo-cloud" aria-labelledby="tech-heading">
-            <div class="container">
-                <h2 class="logo-cloud__title" id="tech-heading">Web technologies used in our app</h2>
-                <div class="logo-cloud__grid">
-                    <img src="images/ipfs-logo.svg" alt="IPFS" class="logo-cloud__logo logo-cloud__logo--tall" loading="lazy">
-                    <img src="images/openwebui.svg" alt="Open WebUI" class="logo-cloud__logo" loading="lazy">
-                    <img src="images/nextjs-logo.svg" alt="Next.js" class="logo-cloud__logo" loading="lazy">
-                    <img src="images/tailwind-css-logo.svg" alt="Tailwind CSS" class="logo-cloud__logo" loading="lazy">
-                </div>
+            <!-- Docs callout – visible early in the page -->
+            <div class="docs-callout fade-up delay-3">
+              <svg
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.966 8.966 0 00-6 2.292m0-14.25v14.25"
+                />
+              </svg>
+              <span
+                >Looking for detailed guides, configuration, and API docs?
+                <a href="/site/">Browse the full documentation →</a>
+              </span>
             </div>
-        </section>
+          </div>
 
-        <!-- CTA Section -->
-        <section class="section cta" aria-labelledby="cta-heading">
-            <div class="cta__pattern" aria-hidden="true">
-                <svg aria-hidden="true">
-                    <defs>
-                        <pattern id="cta-pattern" width="200" height="200" x="50%" y="0" patternUnits="userSpaceOnUse">
-                            <path d="M.5 200V.5H200" fill="none"/>
-                        </pattern>
-                    </defs>
-                    <svg x="50%" y="0" class="cta__pattern-shapes">
-                        <path d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z" stroke-width="0"/>
-                    </svg>
-                    <rect width="100%" height="100%" stroke-width="0" fill="url(#cta-pattern)"/>
-                </svg>
+          <div class="hero-visual fade-up delay-2">
+            <img
+              src="/images/screenshot1.png"
+              alt="TruSpace application interface showing decentralized document collaboration"
+              loading="eager"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ PROBLEM ══════════════════════════════════════════════ -->
+      <section>
+        <div class="container">
+          <div class="section-header">
+            <div class="section-label">The problem</div>
+            <h2 class="section-title">
+              Your documents shouldn't live<br />on someone else's server
+            </h2>
+            <p class="section-desc">
+              Most collaboration tools trade your data sovereignty for
+              convenience. TruSpace is different.
+            </p>
+          </div>
+
+          <div class="problem-grid">
+            <div class="problem-card">
+              <div class="problem-icon">☁️</div>
+              <h3>Are you using cloud drives?</h3>
+              <p>
+                You're trusting one company with your most sensitive documents.
+                What happens when they're hacked, change their terms, or simply
+                disappear?
+              </p>
             </div>
-            <div class="cta__gradient" aria-hidden="true">
-                <div class="cta__gradient-shape"></div>
+            <div class="problem-card">
+              <div class="problem-icon">📧</div>
+              <h3>Sharing via email?</h3>
+              <p>
+                Federated by design — but version chaos, file size limits, and
+                duplicated copies make it painful for real collaboration.
+              </p>
             </div>
-            
-            <div class="container cta__content">
-                <h2 class="cta__title" id="cta-heading">Try it out - if you like it, keep it</h2>
-                <p class="cta__text">It's open source and GPL licensed. Enjoy.</p>
-                <div class="cta__buttons">
-                    <a href="https://truspace.dev/login" class="btn btn--primary btn--large">Login</a>
-                    <a href="https://truspace.dev/register" class="btn btn--text btn--large">
-                        Register<span aria-hidden="true">→</span>
-                    </a>
+            <div class="problem-card">
+              <div class="problem-icon">🔒</div>
+              <h3>Is your AI processing data remotely?</h3>
+              <p>
+                Sending sensitive documents to third-party AI models means your
+                data trains someone else's model. Local AI keeps it private.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ QUICKSTART ════════════════════════════════════════════ -->
+      <section class="quickstart" id="quickstart">
+        <div class="container">
+          <div class="quickstart-inner">
+            <div>
+              <div class="section-label">Quick Start</div>
+              <h2 class="section-title">
+                Up and running<br />in under 5 minutes
+              </h2>
+              <p class="section-desc" style="margin-bottom: 40px">
+                All you need is Docker. Clone, run one script, done.
+              </p>
+
+              <div class="steps">
+                <div class="step">
+                  <div class="step-num">1</div>
+                  <div class="step-content">
+                    <h4>Prerequisites</h4>
+                    <p>
+                      Make sure you have <strong>Docker</strong> and
+                      <strong>Docker Compose</strong> installed on your machine.
+                    </p>
+                  </div>
                 </div>
+                <div class="step">
+                  <div class="step-num">2</div>
+                  <div class="step-content">
+                    <h4>Clone the repository</h4>
+                    <p>
+                      Use SSH (recommended) or HTTPS to clone the TruSpace
+                      repository from GitHub.
+                    </p>
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-num">3</div>
+                  <div class="step-content">
+                    <h4>Run the start script</h4>
+                    <p>
+                      A single script sets up everything — env files, volumes,
+                      images, containers, and the default AI model.
+                    </p>
+                  </div>
+                </div>
+                <div class="step">
+                  <div class="step-num">4</div>
+                  <div class="step-content">
+                    <h4>Open TruSpace</h4>
+                    <p>
+                      Navigate to
+                      <a
+                        href="http://localhost:3000"
+                        style="color: var(--accent-h)"
+                        >localhost:3000</a
+                      >
+                      in your browser and start collaborating.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <a
+                href="/site/quickstart/"
+                class="btn btn-primary"
+                style="margin-top: 32px; display: inline-flex"
+              >
+                Full setup guide →
+              </a>
             </div>
-        </section>
+
+            <div>
+              <div class="terminal">
+                <div class="terminal-bar">
+                  <span class="terminal-dot td-red"></span>
+                  <span class="terminal-dot td-yellow"></span>
+                  <span class="terminal-dot td-green"></span>
+                  <span class="terminal-title">~/projects — bash</span>
+                </div>
+                <div class="terminal-body">
+                  <span class="t-line t-comment"
+                    ># Clone via SSH (recommended)</span
+                  >
+                  <span class="t-line"
+                    ><span class="t-prompt">$ </span
+                    ><span class="t-cmd"
+                      >git clone git@github.com:openkfw/TruSpace.git</span
+                    ></span
+                  >
+                  <span class="t-line t-out">Cloning into 'TruSpace'...</span>
+                  <span class="t-line t-out"
+                    >remote: Enumerating objects: 4823, done.</span
+                  >
+                  <span class="t-line t-out"
+                    >Resolving deltas: 100% (2341/2341), done.</span
+                  >
+                  <br />
+                  <span class="t-line"
+                    ><span class="t-prompt">$ </span
+                    ><span class="t-cmd">cd TruSpace</span></span
+                  >
+                  <br />
+                  <span class="t-line t-comment"
+                    ># Start everything with one command</span
+                  >
+                  <span class="t-line"
+                    ><span class="t-prompt">$ </span
+                    ><span class="t-cmd">./start.sh</span></span
+                  >
+                  <span class="t-line t-out"
+                    >✔ Created .env from .env.example</span
+                  >
+                  <span class="t-line t-out">✔ Created Docker volumes</span>
+                  <span class="t-line t-out">✔ Pulled Docker images</span>
+                  <span class="t-line t-out">✔ Started all containers</span>
+                  <span class="t-line t-out"
+                    >✔ Downloading AI model (llama3.2)...</span
+                  >
+                  <br />
+                  <span class="t-line t-out">🎉 TruSpace is ready!</span>
+                  <span class="t-line"
+                    ><span class="t-prompt"> </span
+                    ><span class="t-url">→ http://localhost:3000</span></span
+                  >
+                </div>
+              </div>
+
+              <div class="terminal-info">
+                <strong>What does start.sh do?</strong>
+                <ul>
+                  <li>
+                    Creates <code>.env</code> from <code>.env.example</code>
+                  </li>
+                  <li>Sets up necessary Docker volumes</li>
+                  <li>Pulls &amp; builds all container images</li>
+                  <li>Starts all services via Docker Compose</li>
+                  <li>Downloads the default AI model (if AI enabled)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ FEATURES ═════════════════════════════════════════════ -->
+      <section>
+        <div class="container">
+          <div class="section-header center">
+            <div class="section-label">What you get</div>
+            <h2 class="section-title">Built for real data sovereignty</h2>
+            <p class="section-desc">
+              Everything runs in your infrastructure. No exceptions.
+            </p>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">🛡️</div>
+              <h3>Sovereign Storage</h3>
+              <p>
+                All data lives on your server. With content-based addressing via
+                IPFS, data is tamper-proof and cannot be manipulated by third
+                parties.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🤖</div>
+              <h3>Local AI Processing</h3>
+              <p>
+                Powered by Ollama and Open Web UI. Your documents never leave
+                your infrastructure. Full AI capabilities, zero data exposure.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🌐</div>
+              <h3>Decentralized by Design</h3>
+              <p>
+                Built on a private IPFS network. Collaboration continues even
+                during network splits. No central point of failure.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">👥</div>
+              <h3>Multi-Stakeholder Ready</h3>
+              <p>
+                Invite exactly who you need — and no one else. Granular access
+                control without relying on a third-party identity provider.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔓</div>
+              <h3>Open Source &amp; GPL</h3>
+              <p>
+                Every line of code is auditable. Fork it, self-host it, improve
+                it. TruSpace is a digital public good, not a product.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">⚡</div>
+              <h3>One-Command Deploy</h3>
+              <p>
+                Docker Compose setup that gets you running in minutes. No
+                Kubernetes expertise required. Production-ready out of the box.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ VIDEO ════════════════════════════════════════════════ -->
+      <section style="padding-top: 0">
+        <div class="container">
+          <div class="section-header center" style="margin-bottom: 48px">
+            <div class="section-label">See it in action</div>
+            <h2 class="section-title">Watch the demo</h2>
+          </div>
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/dpo_D3NJpqE?si=CnmQLS9RWeJ9sjJx"
+              title="TruSpace Demo - Decentralized Document Collaboration Platform"
+              allow="
+                accelerometer;
+                autoplay;
+                clipboard-write;
+                encrypted-media;
+                gyroscope;
+                picture-in-picture;
+                web-share;
+              "
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ DOCUMENTATION LINKS ═══════════════════════════════════ -->
+      <section>
+        <div class="container">
+          <div class="section-header">
+            <div class="section-label">Documentation</div>
+            <h2 class="section-title">
+              Everything you need<br />to get started
+            </h2>
+            <p class="section-desc">
+              Comprehensive guides, API references, and configuration docs — all
+              open source.
+            </p>
+          </div>
+
+          <div class="docs-cards">
+            <a href="/site/quickstart/" class="doc-card">
+              <div class="doc-card-header">
+                <div class="doc-icon">⚡</div>
+                <h4>Quick Start</h4>
+              </div>
+              <p>
+                Get TruSpace running locally with Docker in under 5 minutes.
+                Step-by-step guide.
+              </p>
+              <span class="doc-link">Read guide →</span>
+            </a>
+            <a href="/site/configuration/" class="doc-card">
+              <div class="doc-card-header">
+                <div class="doc-icon">⚙️</div>
+                <h4>Configuration</h4>
+              </div>
+              <p>
+                Environment variables, Docker Compose options, and advanced
+                deployment settings.
+              </p>
+              <span class="doc-link">Read guide →</span>
+            </a>
+            <a href="/site/architecture/" class="doc-card">
+              <div class="doc-card-header">
+                <div class="doc-icon">🏗️</div>
+                <h4>Architecture</h4>
+              </div>
+              <p>
+                Understand how IPFS, Ollama, and the Next.js frontend work
+                together.
+              </p>
+              <span class="doc-link">Read guide →</span>
+            </a>
+            <a href="/site/api/" class="doc-card">
+              <div class="doc-card-header">
+                <div class="doc-icon">🔌</div>
+                <h4>API Reference</h4>
+              </div>
+              <p>
+                Full REST API documentation for integrating TruSpace into your
+                workflows.
+              </p>
+              <span class="doc-link">Read guide →</span>
+            </a>
+            <a href="/site/contributing/" class="doc-card">
+              <div class="doc-card-header">
+                <div class="doc-icon">🤝</div>
+                <h4>Contributing</h4>
+              </div>
+              <p>
+                How to contribute, run tests, and submit pull requests to
+                TruSpace.
+              </p>
+              <span class="doc-link">Read guide →</span>
+            </a>
+            <a href="/site/" class="doc-card">
+              <div class="doc-card-header">
+                <div class="doc-icon">📚</div>
+                <h4>All Documentation</h4>
+              </div>
+              <p>
+                Browse the complete documentation site for all guides and
+                references.
+              </p>
+              <span class="doc-link">Browse all →</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ LOGO CLOUD ════════════════════════════════════════════ -->
+      <div class="logos">
+        <div class="container">
+          <p>Core technologies powering TruSpace</p>
+          <div class="logos-grid">
+            <img src="/images/ipfs-logo.svg" alt="IPFS" />
+            <img src="/images/nextjs-logo.svg" alt="Next.js" />
+            <img src="/images/openwebui.svg" alt="Open Web UI" />
+            <img src="/images/tailwind-css-logo.svg" alt="Tailwind CSS" />
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ CTA ══════════════════════════════════════════════════ -->
+      <section>
+        <div class="container">
+          <div class="cta">
+            <h2>Try it. Keep it if you like it.</h2>
+            <p>
+              Open source, GPL licensed, and free forever. Your data, your
+              rules.
+            </p>
+            <div class="cta-buttons">
+              <a href="#quickstart" class="btn btn-primary btn-lg"
+                >⚡ Start in 5 min</a
+              >
+              <a href="/site/" class="btn btn-outline btn-lg">Read the Docs</a>
+              <a
+                href="https://truspace.dev/register"
+                class="btn btn-outline btn-lg"
+                >Live Demo</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer__container">
-            <p class="footer__copyright">
-                © 2025 TruSpace, <a href="https://github.com/openkfw/TruSpace">Impressum here</a>
-            </p>
-            <a href="https://github.com/openkfw/TruSpace" class="footer__github" aria-label="GitHub repository">
-                <span class="sr-only">GitHub</span>
-                <svg class="icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
-                </svg>
-            </a>
+    <!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+    <footer>
+      <div class="container footer-inner">
+        <p>
+          © 2025 TruSpace — A digital public good by
+          <a href="https://github.com/openkfw" style="color: var(--accent-h)"
+            >OpenKFW</a
+          >
+        </p>
+        <div class="footer-links">
+          <a href="/site/">Documentation</a>
+          <a
+            href="https://github.com/openkfw/TruSpace"
+            target="_blank"
+            rel="noopener"
+            >GitHub</a
+          >
+          <a
+            href="https://github.com/openkfw/TruSpace/blob/main/LICENSE"
+            target="_blank"
+            rel="noopener"
+            >License (GPL)</a
+          >
+          <a href="https://github.com/openkfw/TruSpace">Impressum</a>
         </div>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
