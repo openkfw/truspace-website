@@ -1,0 +1,107 @@
+/* ═══ REFERENCES & PUBLICATIONS ═══════════════════════════════════
+   Uses the site's existing CSS custom properties (--accent-h,
+   --text-muted, etc.) with safe fallbacks so it drops in cleanly
+   next to css/styles.css. */
+
+.references {
+  padding-top: 0;
+}
+
+.ref-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.ref-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 28px;
+  border-radius: 14px;
+  background: var(--card-bg, rgba(255, 255, 255, 0.03));
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+  text-decoration: none;
+  color: inherit;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ref-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-h, #58a6ff);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+
+.ref-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.ref-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(88, 166, 255, 0.12);
+  color: var(--accent-h, #58a6ff);
+}
+
+.ref-badge-award {
+  background: rgba(240, 180, 40, 0.14);
+  color: #f0b428;
+}
+
+.ref-badge-paper {
+  background: rgba(163, 113, 247, 0.14);
+  color: #a371f7;
+}
+
+.ref-date {
+  font-size: 0.8rem;
+  color: var(--text-muted, #8b949e);
+}
+
+.ref-icon {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.ref-card h3 {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.ref-card p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-muted, #8b949e);
+  margin: 0;
+  flex-grow: 1;
+}
+
+.ref-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-h, #58a6ff);
+  margin-top: 4px;
+}
+
+@media (max-width: 600px) {
+  .ref-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ref-card {
+    padding: 22px;
+  }
+}
